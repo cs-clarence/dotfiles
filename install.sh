@@ -7,5 +7,5 @@ for i in "$dir"/home/.*; do
     continue
   fi
 
-  echo "$dir/home/$filename" "$HOME/$filename"
+  ln -s "$dir/home/$filename" "$HOME/$filename"
 done
