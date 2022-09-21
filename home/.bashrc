@@ -7,9 +7,8 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # User specific environment
-if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
-then
-    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
+	PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 fi
 export PATH
 
@@ -29,6 +28,15 @@ fi
 export ANDROID_HOME="$HOME/Android/Sdk"
 export PATH="$ANDROID_HOME/platform-tools:$ANDROID_HOME/cmdline-tools:$ANDROID_HOME/emulator:$PATH"
 
+# Setting chrome dev tool for flutter
+if [ -x "$(command -v chrome-browser)" ]; then
+	ce="$(which chrome-browser)"
+	export CHROME_EXECUTABLE=$ce
+elif [ -x "$(command -v chromium-browser)" ]; then
+	ce="$(which chromium-browser)"
+	export CHROME_EXECUTABLE=$ce
+fi
+
 unset rc
 
 # pnpm
@@ -46,3 +54,5 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # GVM
 [[ -s "/home/rencedm112/.gvm/scripts/gvm" ]] && source "/home/rencedm112/.gvm/scripts/gvm"
 # END GVM
+
+export PATH="/home/rencedm112/.surrealdb:$PATH"
