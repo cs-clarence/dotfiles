@@ -1,4 +1,4 @@
-# dotfiles
+# Clarence Manuel's dotfiles
 
 How to use:
 
