@@ -139,6 +139,7 @@ cmp.setup({
     { name = "dictionary" },
     { name = "calc" },
     { name = "copilot" },
+    { name = "crates" },
     -- I replaced this plugin with lua-dev
     -- { name = "nvim_lua" },
   }, {

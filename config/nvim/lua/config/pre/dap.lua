@@ -1,1 +1,8 @@
-local dap_ok, dap = pcall(require, "dap")
+-- local dap_ok, dap = pcall(require, "dap")
+--
+-- if not dap_ok then
+--   vim.notify("Failed to require dap")
+--   return
+-- end
+--
+-- dap.setup()

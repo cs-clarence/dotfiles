@@ -113,6 +113,9 @@ M.list = {
   -- "github/copilot.vim",
   "zbirenbaum/copilot.lua",
   "zbirenbaum/copilot-cmp",
+
+  -- Rust
+  "Saecki/crates.nvim",
 }
 
 return M
