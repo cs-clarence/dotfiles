@@ -59,7 +59,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 . "$HOME/.cargo/env"
 
 # GVM
-[[ -s "/home/rencedm112/.gvm/scripts/gvm" ]] && source "/home/rencedm112/.gvm/scripts/gvm"
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 # END GVM
 
-export PATH="/home/rencedm112/.surrealdb:$PATH"
+export PATH="$HOME/.surrealdb:$PATH"

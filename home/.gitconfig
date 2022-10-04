@@ -1,3 +1,15 @@
 [user]
 	email = rencedm112@gmail.com
-	name = Clarence
+	name = Clarence Manuel
+[merge]
+	tool = kdiff3
+[mergetool "kdiff3"]
+	path = /usr/bin/kdiff3
+	trustExitCode = false
+[diff]
+	tool = kdiff3
+[difftool "kdiff3"]
+	path = /usr/bin/kdiff3
+	trustExitCode = false
+[core]
+	editor = vim
