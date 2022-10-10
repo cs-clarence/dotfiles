@@ -29,8 +29,8 @@ end
 local allowed_lsps = { svelte = true }
 local function lsp_set_formatting(client)
   if client.name ~= "null-ls" and not allowed_lsps[client.name] then
-    client.resolved_capabilities.document_formatting = false -- 0.7 and earlier
-    client.resolved_capabilities.documentFormattingProvider = false -- 0.8 and later
+    -- client.resolved_capabilities.document_formatting = false -- 0.7 and earlier
+    client.server_capabilities.documentFormattingProvider = false -- 0.8 and later
   end
 end
 
