@@ -12,4 +12,4 @@
 	path = /usr/bin/kdiff3
 	trustExitCode = false
 [core]
-	editor = vim
+	editor = vi
