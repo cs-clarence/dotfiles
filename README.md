@@ -1,4 +1,4 @@
-# Clarence Manuel's dotfiles
+# Fedora machine dotfiles
 
 How to use:
 
@@ -12,5 +12,6 @@ git clone https://github.com/cs-clarence/dotfiles.git .dotfiles
 2. Run `install.sh`
 
 ```bash
-./.dotfiles/install.sh
+cd .dotfiles
+./install.sh
 ```
