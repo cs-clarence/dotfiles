@@ -116,6 +116,9 @@ M.list = {
 
   -- Rust
   "Saecki/crates.nvim",
+
+  -- Refactoring tools
+  "ThePrimeagen/refactoring.nvim",
 }
 
 return M
