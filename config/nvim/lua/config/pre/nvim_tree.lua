@@ -20,7 +20,7 @@ nvim_tree.setup({
   reload_on_bufenter = true,
   auto_reload_on_write = true,
   open_on_setup_file = false,
-  open_on_setup = false,
+  open_on_setup = true,
   hijack_cursor = true,
   sync_root_with_cwd = true,
   view = {

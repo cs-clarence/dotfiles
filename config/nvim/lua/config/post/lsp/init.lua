@@ -21,7 +21,8 @@ local on_attach_ok, on_attach = pcall(require, "lsp.on_attach")
 if not on_attach_ok then
   vim.notify("Failed to load on_attach")
   return
-end --
+end
+
 -- for some reason, pcall with require and mason fails
 local mason_ok, mason = pcall(require, "mason")
 
