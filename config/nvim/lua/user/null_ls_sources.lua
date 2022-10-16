@@ -6,6 +6,7 @@ end
 
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
 local formatting = null_ls.builtins.formatting
+local diagnostics = null_ls.builtins.diagnostics
 
 local default_sources = {
   formatting.prettierd,
@@ -16,11 +17,21 @@ local default_sources = {
 
   formatting.dart_format,
 
-  -- go stuff
+  -- GO
   formatting.gofumpt,
   formatting.goimports,
+  formatting.goimports_reviser,
   formatting.golines,
-  -- end go stuff
+  formatting.goimports_reviser,
+  -- END GO
+
+  -- PHP
+  formatting.phpcbf,
+  formatting.phpcsfixer,
+  -- diagnostics.phpstan,
+  -- diagnostics.phpcs,
+  -- diagnostics.phpmd,
+  -- END PHP
 
   formatting.clang_format,
 
