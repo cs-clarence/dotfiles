@@ -33,6 +33,8 @@ local default_sources = {
   -- diagnostics.phpmd,
   -- END PHP
 
+  diagnostics.hadolint,
+
   formatting.clang_format,
 
   formatting.rustfmt,
