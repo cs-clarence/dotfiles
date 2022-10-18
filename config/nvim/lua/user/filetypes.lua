@@ -11,7 +11,10 @@ local config = {
     -- Set for specific filenames
     literal = {},
     -- Set the filetype of any full filename matching the regex
-    complex = {},
+    complex = {
+      ["[Dd]ockerfile.%w+"] = "dockerfile",
+      ["[Dd]ockerfile"] = "dockerfile",
+    },
     -- These are same as above but gets the values from return of the functions
     function_extensions = {},
     function_literal = {},
