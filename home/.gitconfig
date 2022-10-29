@@ -1,15 +1,24 @@
 [user]
 	email = rencedm112@gmail.com
 	name = Clarence Manuel
-[merge]
-	tool = kdiff3
-[mergetool "kdiff3"]
-	path = /usr/bin/kdiff3
-	trustExitCode = false
-[diff]
-	tool = kdiff3
-[difftool "kdiff3"]
-	path = /usr/bin/kdiff3
-	trustExitCode = false
+
 [core]
 	editor = vi
+
+[diff]
+        tool = kdiff3
+[difftool "kdiff3"]
+        path = /usr/bin/kdiff3
+[difftool]
+        prompt = false
+        keepBackup = false
+        trustExitCode = false
+
+[merge]
+        tool = kdiff3
+[mergetool]
+        prompt = false
+        keepBackup = false
+        keepTemporaries = false
+[mergetool "kdiff3"]
+        path = usr/bin/kdiff3
