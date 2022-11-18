@@ -84,7 +84,7 @@ M.list = {
   "folke/todo-comments.nvim",
 
   -- Luadev, vim and plugins autocomplete
-  "folke/lua-dev.nvim",
+  "folke/neodev.nvim",
 
   -- WhichKey, shows suggestions for keystrokes
   "folke/which-key.nvim",

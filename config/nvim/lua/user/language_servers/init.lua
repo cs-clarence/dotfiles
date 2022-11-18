@@ -1,5 +1,4 @@
 return {
-  "dartls",
   "svelte",
   "html",
   "tailwindcss",

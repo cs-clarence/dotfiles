@@ -5,6 +5,6 @@ if not cmp_nvim_lsp_ok then
   return
 end
 
-capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
 return capabilities
