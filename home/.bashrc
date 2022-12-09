@@ -56,6 +56,15 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 # BUN end
 
+# NGROK
+export NGROK_HOME="$HOME/.ngrok"
+export PATH="$NGROK_HOME/bin:$PATH"
+
+# MITM PROXY START
+export MITM_HOME="$HOME/.mitmproxy"
+export PATH="$MITM_HOME/bin:$PATH"
+# MITM PROXY END
+
 . "$HOME/.cargo/env"
 
 # GVM
