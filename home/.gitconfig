@@ -22,3 +22,5 @@
         keepTemporaries = false
 [mergetool "kdiff3"]
         path = usr/bin/kdiff3
+[init]
+	defaultBranch = main
