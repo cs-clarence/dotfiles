@@ -6,7 +6,6 @@ local default = "vscode"
 -- A list for colorschemes you want to install
 local default_colorschemes = {
   "morhetz/gruvbox",
-  "folke/tokyonight.nvim",
   "tomasr/molokai",
   "sonph/onehalf",
   "dracula/vim",
