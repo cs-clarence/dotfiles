@@ -69,6 +69,13 @@ mason_lsp_config.setup_handlers({
     if has_custom_opts then
       local_opts = vim.tbl_deep_extend("force", opts, custom_opts)
     end
+
+    -- Handle deprecated name
+    if server_name == "sumneko_lua" then
+      lc["lua_ls"].setup(local_opts)
+      return
+    end
+
     lc[server_name].setup(local_opts)
   end,
   ["sqls"] = function(server_name)

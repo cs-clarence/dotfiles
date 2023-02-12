@@ -1,0 +1,8 @@
+{
+  "lspconfig": {
+    "jsonls": {
+      "json.validate.enable": true,
+      "json.schemaDownload.enable": true
+    }
+  }
+}

@@ -1,5 +1,4 @@
-local M = {}
-M.list = {
+return {
   -- Packer can manage itself
   "wbthomason/packer.nvim",
 
@@ -119,6 +118,7 @@ M.list = {
 
   -- Refactoring tools
   "ThePrimeagen/refactoring.nvim",
-}
 
-return M
+  -- Configs
+  "folke/neoconf.nvim",
+}
