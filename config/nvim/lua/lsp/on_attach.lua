@@ -25,7 +25,7 @@ local function lsp_set_keymaps(bufnr)
 end
 
 -- LSPs to allow formatting capability
-local allowed_lsps = { svelte = true, rust_analyzer = true }
+local allowed_lsps = { svelte = true, rust_analyzer = true, taplo = true }
 local function lsp_set_formatting(client)
   if client.name ~= "null-ls" and not allowed_lsps[client.name] then
     client.server_capabilities.documentFormattingProvider = false -- 0.8 and later
