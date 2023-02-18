@@ -25,5 +25,5 @@ return {
   "emmet_ls",
   "jsonls",
   "zls",
-  "sqls",
+  "sqlls",
 }

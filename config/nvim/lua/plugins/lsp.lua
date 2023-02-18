@@ -3,10 +3,18 @@ return {
   "williamboman/mason-lspconfig.nvim",
   {
     "neovim/nvim-lspconfig",
+    lazy = false,
+    priority = 1000,
     config = function()
-      -- Neoconf comes first
+      -- Neoconf runs first
       do
-        require("plugins.neoconf")[1].config()
+        local ok, plugin = pcall(require, "neoconf")
+
+        if not ok then
+          vim.notify("Failed to require neoconf")
+          return
+        end
+        plugin.setup()
       end
 
       local lsp_config_ok, lc = pcall(require, "lspconfig")

@@ -1,14 +1,15 @@
 return {
-	{
-		"kyazdani42/nvim-web-devicons",
-		config = function()
-			local nvim_web_devicons_ok, nvim_web_devicons = pcall(require, "nvim-web-devicons")
-			if not nvim_web_devicons_ok then
-				vim.notify("Failed to require nvim-web-devicons")
-				return
-			end
+  {
+    "kyazdani42/nvim-web-devicons",
+    config = function()
+      local nvim_web_devicons_ok, nvim_web_devicons =
+        pcall(require, "nvim-web-devicons")
+      if not nvim_web_devicons_ok then
+        vim.notify("Failed to require nvim-web-devicons")
+        return
+      end
 
-			nvim_web_devicons.setup()
-		end,
-	},
+      nvim_web_devicons.setup()
+    end,
+  },
 }
