@@ -1,6 +1,6 @@
 return {
+  "zbirenbaum/copilot-cmp",
   {
-    "zbirenbaum/copilot-cmp",
     "zbirenbaum/copilot.lua",
     config = function()
       local copilot_ok, copilot = pcall(require, "copilot")
