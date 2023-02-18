@@ -55,6 +55,7 @@
         "/home/rencedm112/.local/share/nvim/site/pack/packer/start/trouble.nvim",
         "/home/rencedm112/.local/share/nvim/site/pack/packer/start/vscode.nvim",
         "/home/rencedm112/.local/share/nvim/site/pack/packer/start/which-key.nvim",
-        "${3rd}/luassert/library"
+        "${3rd}/luassert/library",
+        "${3rd}/luv/library"
     ]
 }

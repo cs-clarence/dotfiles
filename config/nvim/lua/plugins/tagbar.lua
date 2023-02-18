@@ -1,0 +1,6 @@
+return {
+  {
+    -- Tagbar
+    "preservim/tagbar",
+  },
+}
