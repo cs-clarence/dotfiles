@@ -68,6 +68,7 @@ return {
         capabilities = capabilities,
         on_attach = on_attach,
       }
+
       vim.lsp.handlers["textDocument/hover"] =
         vim.lsp.with(vim.lsp.handlers.hover, {
           border = "rounded",
@@ -104,28 +105,6 @@ return {
             lc["lua_ls"].setup(local_opts)
             return
           end
-
-          lc[server_name].setup(local_opts)
-        end,
-        ["sqls"] = function(server_name)
-          local sqls_ok, sqls = pcall(require, "sqls")
-
-          if not sqls_ok then
-            vim.notify("Failed to require sqls")
-            return
-          end
-          local has_custom_opts, custom_opts =
-            pcall(require, "user.language_servers.options." .. server_name)
-          if not has_custom_opts then
-            custom_opts = {}
-          end
-
-          custom_opts.on_attach = function(client, bufnr)
-            on_attach(client, bufnr)
-            sqls.on_attach(client, bufnr)
-          end
-
-          local local_opts = vim.tbl_deep_extend("force", opts, custom_opts)
 
           lc[server_name].setup(local_opts)
         end,

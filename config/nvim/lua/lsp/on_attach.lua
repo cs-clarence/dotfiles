@@ -24,12 +24,10 @@ local function lsp_set_keymaps(bufnr)
   keymap("n", "<leader>f", vim.lsp.buf.formatting, buf_opts)
 end
 
--- TODO: This is an old approach that is available in neovim 0.7, update according once vim 0.8 is available
 -- LSPs to allow formatting capability
-local allowed_lsps = { svelte = true }
+local allowed_lsps = { svelte = true, rust_analyzer = true }
 local function lsp_set_formatting(client)
   if client.name ~= "null-ls" and not allowed_lsps[client.name] then
-    -- client.resolved_capabilities.document_formatting = false -- 0.7 and earlier
     client.server_capabilities.documentFormattingProvider = false -- 0.8 and later
   end
 end
