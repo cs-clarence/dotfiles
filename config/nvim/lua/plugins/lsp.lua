@@ -3,9 +3,10 @@ return {
   "williamboman/mason-lspconfig.nvim",
   {
     "neovim/nvim-lspconfig",
-    lazy = false,
-    priority = 999,
     config = function()
+      -- Neoconf comes first
+      require("neoconf")
+
       local lsp_config_ok, lc = pcall(require, "lspconfig")
       if not lsp_config_ok then
         vim.notify("Failed to require lspconfig")

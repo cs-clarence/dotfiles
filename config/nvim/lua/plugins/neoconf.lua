@@ -1,17 +1,15 @@
 return {
   {
     "folke/neoconf.nvim",
-    lazy = false,
-    priority = 2000,
     config = function()
       local ok, plugin = pcall(require, "neoconf")
 
       if not ok then
-        vim.notify("Failed to load neoconf")
+        vim.notify("Failed to require neoconf")
         return
       end
 
-      plugin.setup({})
+      plugin.setup()
     end,
   },
 }

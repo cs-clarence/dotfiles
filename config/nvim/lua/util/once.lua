@@ -4,7 +4,7 @@ local M = {}
 ---@param fn function(...)
 ---@param message string?
 ---@return function(...)
-function M.do_once(fn, message)
+function M.do_fn(fn, message)
   local ran = false
   return function(...)
     if not ran then
