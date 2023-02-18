@@ -1,0 +1,13 @@
+return {
+	{
+		"mfussenegger/nvim-dap",
+		config = function()
+			local dap_ok, dap = pcall(require, "dap")
+
+			if not dap_ok then
+				vim.notify("Failed to require dap")
+				return
+			end
+		end,
+	},
+}
