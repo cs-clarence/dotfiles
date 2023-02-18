@@ -5,7 +5,9 @@ return {
     "neovim/nvim-lspconfig",
     config = function()
       -- Neoconf comes first
-      require("neoconf")
+      do
+        require("plugins.neoconf")[1].config()
+      end
 
       local lsp_config_ok, lc = pcall(require, "lspconfig")
       if not lsp_config_ok then

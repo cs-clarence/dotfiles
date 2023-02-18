@@ -8,7 +8,6 @@ return {
         vim.notify("Failed to require neoconf")
         return
       end
-
       plugin.setup()
     end,
   },
