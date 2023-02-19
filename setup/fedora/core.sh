@@ -18,8 +18,12 @@ to_be_run=()
 # The list which constains packages to install
 
 for package in "${!core_dnf_packages[@]}"; do
-  if ! which "${core_dnf_packages[${package}]}" > /dev/null; then
+  if ! which "${core_dnf_packages[${package}]}" &> /dev/null; then
     to_be_installed+=("${package}")
     to_be_run+=("${post_install_commands[${package}]}")
+
+    echo "${package} will be installed"
+  else 
+    echo "${package} is already installed"
   fi
 done
