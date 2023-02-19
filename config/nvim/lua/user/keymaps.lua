@@ -12,7 +12,7 @@ vim.g.maplocalleader = " "
 keymap("t", [[<ESC>]], [[<C-\><C-n>]], default_opts)
 
 -- NvimToggleTree keymaps
-keymap("n", [[<leader>tt]], [[<cmd>NvimTreeToggle<cr>]], default_opts)
+keymap("n", [[<leader>tt]], [[<cmd>Neotree toggle<cr>]], default_opts)
 
 -- Fzf Toggle
 keymap("n", [[<leader>ff]], [[<cmd>Fzf files<cr>]], default_opts)
@@ -44,10 +44,6 @@ keymap("n", [[<leader>tr]], [[<cmd>ToggleTerm<cr>]], default_opts)
 
 -- Tagbar
 keymap("n", [[<leader>tb]], [[<cmd>TagbarToggle<cr>]], default_opts)
-
--- Packer keymaps command
-keymap("n", [[<leader>ps]], [[<cmd>PackerSync<cr>]], default_opts)
-keymap("n", [[<leader>pu]], [[<cmd>PackerUpdate<cr>]], default_opts)
 
 -- Trouble
 keymap(

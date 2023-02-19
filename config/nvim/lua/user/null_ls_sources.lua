@@ -7,11 +7,12 @@ end
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
 local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
+local hover = null_ls.builtins.hover
 
 local default_sources = {
   formatting.prettierd,
 
-  formatting.black.with({ extra_args = { "--fast" } }),
+  formatting.black,
 
   formatting.stylua,
 
@@ -42,6 +43,8 @@ local default_sources = {
     extra_args = { "--language", database.config.driver },
   }),
   formatting.shfmt,
+
+  hover.dictionary,
 }
 
 local M = {}
