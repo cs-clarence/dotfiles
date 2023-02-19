@@ -2,7 +2,7 @@
 local keymap = vim.keymap.set
 
 local default_opts = { noremap = true, silent = true }
-local expr_opts = { noremap = true, expr = true, silent = true }
+-- local expr_opts = { noremap = true, expr = true, silent = true }
 
 -- Set Leader key to space
 vim.g.mapleader = " "
@@ -15,7 +15,7 @@ keymap("t", [[<ESC>]], [[<C-\><C-n>]], default_opts)
 keymap("n", [[<leader>tt]], [[<cmd>Neotree toggle<cr>]], default_opts)
 
 -- Fzf Toggle
-keymap("n", [[<leader>ff]], [[<cmd>Fzf files<cr>]], default_opts)
+keymap("n", [[<leader>lf]], [[<cmd>Fzf files<cr>]], default_opts)
 keymap("n", [[<leader>ft]], [[<cmd>Fzf tags<cr>]], default_opts)
 keymap("n", [[<leader>fb]], [[<cmd>Fzf buffers<cr>]], default_opts)
 keymap("n", [[<leader>fg]], [[<cmd>Fzf grep<cr>]], default_opts)

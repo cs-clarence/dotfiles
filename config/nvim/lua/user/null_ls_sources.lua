@@ -10,21 +10,24 @@ local diagnostics = null_ls.builtins.diagnostics
 local hover = null_ls.builtins.hover
 
 local default_sources = {
+  -- JS, TS, Stylesheets, HTML, etc.
   formatting.prettierd,
 
+  -- Python
   formatting.black,
+  formatting.isort,
 
+  -- Lua
   formatting.stylua,
 
+  -- Dart
   formatting.dart_format,
 
-  -- GO
+  -- Go
   formatting.gofumpt,
   formatting.goimports,
   formatting.goimports_reviser,
   formatting.golines,
-  formatting.goimports_reviser,
-  -- END GO
 
   -- PHP
   formatting.phpcbf,
@@ -32,18 +35,22 @@ local default_sources = {
   -- diagnostics.phpstan,
   -- diagnostics.phpcs,
   -- diagnostics.phpmd,
-  -- END PHP
 
+  -- Docker
   diagnostics.hadolint,
 
+  -- C++, C
   formatting.clang_format,
 
-  formatting.rustfmt,
+  -- SQL
   formatting.sql_formatter.with({
     extra_args = { "--language", database.config.driver },
   }),
+
+  -- Shell
   formatting.shfmt,
 
+  -- Dictionary
   hover.dictionary,
 }
 

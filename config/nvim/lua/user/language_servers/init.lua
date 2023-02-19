@@ -11,7 +11,7 @@ return {
   "tsserver",
   "cssmodules_ls",
   "bashls",
-  "sumneko_lua",
+  "lua_ls",
   "elixirls",
   "gopls",
   "yamlls",
