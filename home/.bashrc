@@ -72,26 +72,3 @@ export PATH="$MITM_HOME/bin:$PATH"
 # END GVM
 
 export PATH="$HOME/.surrealdb:$PATH"
-
-# Python auto register VENVs
-# function register-venv() {
-#   dot_venv_file="$PWD/.venv/bin/activate"
-#   if [[ -f "$dot_venv_file"  ]]; then
-#     source "$dot_venv_file"
-#     return
-#   fi
-#
-#   venv_file="$PWD/venv/bin/activate"
-#   if [[ -f "$venv_file"  ]]; then
-#     source "$venv_file"
-#     return
-#   fi
-# }
-#
-# register-venv
-
-# PyEnv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
