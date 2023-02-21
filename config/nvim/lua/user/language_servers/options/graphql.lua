@@ -1,9 +1,11 @@
 return {
-  filetypes = {
-    "typescript",
-    "javascript",
-    "graphql",
-    "typescriptreact",
-    "javascriptreact",
+  config = {
+    filetypes = {
+      "typescript",
+      "javascript",
+      "graphql",
+      "typescriptreact",
+      "javascriptreact",
+    },
   },
 }

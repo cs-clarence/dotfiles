@@ -97,7 +97,10 @@ return {
           local has_custom_opts, custom_opts =
             pcall(require, "user.language_servers.options." .. server_name)
           if has_custom_opts then
-            local_opts = vim.tbl_deep_extend("force", opts, custom_opts)
+            if type(custom_opts.config) == "table" then
+              local_opts =
+                vim.tbl_deep_extend("force", opts, custom_opts.config)
+            end
 
             if type(custom_opts.setup) == "function" then
               custom_opts.setup()
