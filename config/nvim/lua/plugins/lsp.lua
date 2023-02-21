@@ -98,12 +98,10 @@ return {
             pcall(require, "user.language_servers.options." .. server_name)
           if has_custom_opts then
             local_opts = vim.tbl_deep_extend("force", opts, custom_opts)
-          end
 
-          -- Handle deprecated name
-          if server_name == "sumneko_lua" then
-            lc["lua_ls"].setup(local_opts)
-            return
+            if type(custom_opts.setup) == "function" then
+              custom_opts.setup()
+            end
           end
 
           lc[server_name].setup(local_opts)
