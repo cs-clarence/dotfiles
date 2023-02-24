@@ -27,4 +27,5 @@ return {
   "zls",
   "sqlls",
   "taplo",
+  "stylelint_lsp",
 }
