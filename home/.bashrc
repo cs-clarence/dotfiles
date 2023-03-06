@@ -72,3 +72,7 @@ export PATH="$MITM_HOME/bin:$PATH"
 # END GVM
 
 export PATH="$HOME/.surrealdb:$PATH"
+
+# fnm
+export PATH="/home/rencedm112/.local/share/fnm:$PATH"
+eval "`fnm env`"
