@@ -17,7 +17,7 @@ export PATH
 
 # Customizing shell prompts
 parse_git_branch() {
-     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+	git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 export OLD_PS1=$PS1
 export PS1="\e[0;34m\W\e[0;32m\$(parse_git_branch) \e[0;31m$ \e[m"
@@ -46,11 +46,6 @@ fi
 
 unset rc
 
-# pnpm
-export PNPM_HOME="$HOME/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
-
 # BUN
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
@@ -59,6 +54,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # NGROK
 export NGROK_HOME="$HOME/.ngrok"
 export PATH="$NGROK_HOME/bin:$PATH"
+# NGROK end
 
 # MITM PROXY START
 export MITM_HOME="$HOME/.mitmproxy"
@@ -75,4 +71,4 @@ export PATH="$HOME/.surrealdb:$PATH"
 
 # fnm
 export PATH="/home/rencedm112/.local/share/fnm:$PATH"
-eval "`fnm env`"
+eval "$(fnm env)"
