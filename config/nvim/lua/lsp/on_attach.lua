@@ -21,7 +21,9 @@ local function lsp_set_keymaps(bufnr)
   keymap("n", "<leader>rn", vim.lsp.buf.rename, buf_opts)
   keymap("n", "<leader>ca", vim.lsp.buf.code_action, buf_opts)
   keymap("n", "gr", vim.lsp.buf.references, buf_opts)
-  keymap("n", "<leader>f", vim.lsp.buf.formatting, buf_opts)
+  keymap("n", "<leader>f", function()
+    vim.lsp.buf.format({ async = true })
+  end, buf_opts)
 end
 
 -- LSPs to allow formatting capability

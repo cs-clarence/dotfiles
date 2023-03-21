@@ -72,3 +72,11 @@ export PATH="$HOME/.surrealdb:$PATH"
 # fnm
 export PATH="/home/rencedm112/.local/share/fnm:$PATH"
 eval "$(fnm env)"
+
+# pnpm
+export PNPM_HOME="/home/rencedm112/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
