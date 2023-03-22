@@ -11,15 +11,8 @@ vim.g.maplocalleader = " "
 -- ToggleTerm keymaps
 keymap("t", [[<ESC>]], [[<C-\><C-n>]], default_opts)
 
--- NvimToggleTree keymaps
+-- NeoToggleTree keymaps
 keymap("n", [[<leader>tt]], [[<cmd>Neotree toggle<cr>]], default_opts)
-
--- Fzf Toggle
-keymap("n", [[<leader>lf]], [[<cmd>Fzf files<cr>]], default_opts)
-keymap("n", [[<leader>ft]], [[<cmd>Fzf tags<cr>]], default_opts)
-keymap("n", [[<leader>fb]], [[<cmd>Fzf buffers<cr>]], default_opts)
-keymap("n", [[<leader>fg]], [[<cmd>Fzf grep<cr>]], default_opts)
-keymap("n", [[<leader>fr]], [[<cmd>Fzf git_files<cr>]], default_opts)
 
 -- Better (?) window navigation
 -- I disabled it because i prefer window comamnds starting with C-W after all
@@ -52,12 +45,14 @@ keymap(
   [[<cmd>TroubleToggle document_diagnostics<cr>]],
   default_opts
 )
+
 keymap(
   "n",
   [[<leader>dw]],
   [[<cmd>TroubleToggle workspace_diagnostics<cr>]],
   default_opts
 )
+
 keymap("n", [[<leader>dt]], [[<cmd>TroubleToggle todo<cr>]], default_opts)
 
 -- Diagnostics
