@@ -3,7 +3,6 @@ local config = {
   overrides = {
     -- Set for file extensions
     extensions = {
-      gotmpl = "gotmpl",
       tf = "terraform",
       graphqls = "graphql",
       postcss = "css",
@@ -19,12 +18,12 @@ local config = {
     function_extensions = {},
     function_literal = {},
     function_complex = {
-      [".+.go[%w-_]+$"] = function()
-        local filename = vim.fn.expand("%")
-        local pattern = ".+.go([%w-_]+)"
-        local _, _, filetype = string.find(filename, pattern)
-        vim.bo.filetype = "gotmpl"
-      end,
+      -- [".+.go[%w-_]+$"] = function()
+      --   local filename = vim.fn.expand("%")
+      --   local pattern = ".+.go([%w-_]+)"
+      --   local _, _, filetype = string.find(filename, pattern)
+      --   vim.bo.filetype = "gotmpl"
+      -- end,
     },
 
     -- Set for hashbang/shebang on type of the file

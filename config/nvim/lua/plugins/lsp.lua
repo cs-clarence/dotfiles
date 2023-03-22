@@ -33,7 +33,7 @@ return {
       if not capabilities_ok then
         vim.notify("Failed to load capabilities")
         return
-      end --
+      end
 
       -- Setup Handlers
       local on_attach_ok, on_attach = pcall(require, "lsp.on_attach")

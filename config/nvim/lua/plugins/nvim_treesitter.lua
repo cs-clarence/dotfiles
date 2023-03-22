@@ -46,22 +46,22 @@ return {
         },
       })
 
-      local ok, nvim_treesitter_parsers =
-        pcall(require, "nvim-treesitter.parsers")
-      if not ok then
-        vim.notify("Failed to require nvim-treesitter.parsers")
-        return
-      end
+      -- local ok, nvim_treesitter_parsers =
+      --   pcall(require, "nvim-treesitter.parsers")
+      -- if not ok then
+      --   vim.notify("Failed to require nvim-treesitter.parsers")
+      --   return
+      -- end
 
-      local parser_configs = nvim_treesitter_parsers.get_parser_configs()
-      parser_configs.gotmpl = {
-        install_info = {
-          url = "https://github.com/ngalaiko/tree-sitter-go-template",
-          files = { "src/parser.c" },
-        },
-        filetype = "gotmpl",
-        used_by = { "gohtmltmpl", "gotexttmpl", "gotmpl", "yaml" },
-      }
+      -- local parser_configs = nvim_treesitter_parsers.get_parser_configs()
+      -- parser_configs.gotmpl = {
+      --   install_info = {
+      --     url = "https://github.com/ngalaiko/tree-sitter-go-template",
+      --     files = { "src/parser.c" },
+      --   },
+      --   filetype = "gotmpl",
+      --   used_by = { "gohtmltmpl", "gotexttmpl", "gotmpl", "yaml" },
+      -- }
 
       -- Setup commands
       vim.cmd([[:TSUpdate]])
