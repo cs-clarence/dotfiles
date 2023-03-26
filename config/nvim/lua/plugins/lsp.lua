@@ -42,7 +42,6 @@ return {
         return
       end
 
-      -- for some reason, pcall with require and mason fails
       local mason_ok, mason = pcall(require, "mason")
 
       if not mason_ok then

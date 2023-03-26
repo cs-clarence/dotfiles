@@ -12,6 +12,7 @@ return {
       "hrsh7th/cmp-nvim-lsp-signature-help",
       "f3fora/cmp-spell",
       "hrsh7th/cmp-calc",
+      "saadparwaiz1/cmp_luasnip",
     },
     config = function()
       local cmp_ok, cmp = pcall(require, "cmp")
@@ -55,10 +56,10 @@ return {
         Copilot = "",
       }
 
-      local sourceNameCache = {}
+      local source_name_cachce = {}
 
-      local function createMenuName(sourceName)
-        local menuName = sourceNameCache[sourceName]
+      local function create_menu_name(sourceName)
+        local menuName = source_name_cachce[sourceName]
         if menuName ~= nil then
           return menuName
         end
@@ -72,7 +73,7 @@ return {
         end
 
         menuName = "[" .. table.concat(strings, " ") .. "]"
-        sourceNameCache[sourceName] = menuName
+        source_name_cachce[sourceName] = menuName
 
         return menuName
       end
@@ -84,6 +85,11 @@ return {
       end
 
       cmp.setup({
+
+        experimental = {
+          -- Might conflict with copilot.nvim
+          ghost_text = true,
+        },
         snippet = {
           -- REQUIRED - you must specify a snippet engine
           expand = function(args)
@@ -143,7 +149,7 @@ return {
             -- Kind icons
             vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
             -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
-            vim_item.menu = createMenuName(entry.source.name)
+            vim_item.menu = create_menu_name(entry.source.name)
             return vim_item
           end,
         },
