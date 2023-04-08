@@ -16,6 +16,7 @@
 
 [merge]
         tool = kdiff3
+	ff = false
 [mergetool]
         prompt = false
         keepBackup = false
