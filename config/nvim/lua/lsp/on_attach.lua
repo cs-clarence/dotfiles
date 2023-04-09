@@ -27,9 +27,10 @@ local function lsp_set_keymaps(bufnr)
 end
 
 -- LSPs to allow formatting capability
-local allowed_lsps = { svelte = true, rust_analyzer = true, taplo = true }
+local allowed_formmating_lsps =
+  { svelte = true, rust_analyzer = true, taplo = true }
 local function lsp_set_formatting(client)
-  if client.name ~= "null-ls" and not allowed_lsps[client.name] then
+  if client.name ~= "null-ls" and not allowed_formmating_lsps[client.name] then
     client.server_capabilities.documentFormattingProvider = false -- 0.8 and later
   end
 end
@@ -37,6 +38,13 @@ end
 local function on_attach(client, bufnr)
   lsp_set_keymaps(bufnr)
   lsp_set_formatting(client)
+  if client.server_capabilities.documentFormattingProvider then
+    require("nvim-navic").attach(client, bufnr)
+  end
+
+  if client.server_capabilities.documentSymbolProvider then
+    require("nvim-navbuddy").attach(client, bufnr)
+  end
 end
 
 return on_attach

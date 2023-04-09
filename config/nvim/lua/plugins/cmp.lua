@@ -12,6 +12,7 @@ return {
       "hrsh7th/cmp-nvim-lsp-signature-help",
       "f3fora/cmp-spell",
       "hrsh7th/cmp-calc",
+      "hrsh7th/cmp-nvim-lsp-document-symbol",
       "saadparwaiz1/cmp_luasnip",
     },
     config = function()
@@ -181,9 +182,11 @@ return {
       -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
       cmp.setup.cmdline("/", {
         mapping = cmp.mapping.preset.cmdline(),
-        sources = {
+        sources = cmp.config.sources({
+          { name = "nvim_lsp_document_symbol" },
+        }, {
           { name = "buffer" },
-        },
+        }),
       })
 
       -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
