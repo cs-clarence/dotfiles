@@ -4,7 +4,7 @@ dir=$(realpath "$(dirname "$0")")
 
 declare -A files
 home_dir=~
-home_dir_replacements=(home/.*)
+home_dir_replacements=(home/.* home/*.sh)
 unset "home_dir_replacements[0]" # remove .
 unset "home_dir_replacements[1]" # remove ..
 files[$home_dir]=${home_dir_replacements[*]}
