@@ -128,4 +128,4 @@ for key ('j') bindkey -M vicmd ${key} history-substring-search-down
 unset key
 # }}} End configuration added by Zim install
 
-source ./core.sh
+eval "$(starship init zsh)"

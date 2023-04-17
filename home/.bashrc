@@ -26,5 +26,7 @@ if [ -d ~/.bashrc.d ]; then
 	done
 fi
 
-# Load core env
-. ./core.sh
+
+# User specific environment
+. ./.zshenv
+
