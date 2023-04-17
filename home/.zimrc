@@ -30,8 +30,8 @@ zmodule git-info
 # Formats the current working directory to be used by prompts
 zmodule prompt-pwd
 # A heavily reduced, ASCII-only version of the Spaceship and Starship prompts.
-#zmodule asciiship
-zmodule eriner
+zmodule asciiship
+#zmodule eriner
 
 #
 # Completion
