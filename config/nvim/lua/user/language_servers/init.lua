@@ -1,7 +1,6 @@
 return {
   "svelte",
   "html",
-  "tailwindcss",
   "vimls",
   "intelephense",
   "clangd",
@@ -26,4 +25,5 @@ return {
   "taplo",
   "stylelint_lsp",
   "unocss",
+  "tailwindcss",
 }

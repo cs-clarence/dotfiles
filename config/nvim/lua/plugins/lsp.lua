@@ -81,7 +81,6 @@ return {
       do
         -- Setup LSPs not supported by mason
         lc.dartls.setup(opts)
-        lc.unocss.setup(opts)
       end
 
       mason.setup()
