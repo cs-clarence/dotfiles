@@ -7,6 +7,8 @@ dnf_packages["clang"]="clang"
 dnf_packages["cmake"]="cmake"
 dnf_packages["snap"]="snapd"
 dnf_packages["shmft"]="shfmt"
+dnf_packages=["alacritty"]="alacritty"
+dnf_packages=["firefox"]="firefox"
 
 declare -A external_binaries
 
