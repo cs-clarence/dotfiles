@@ -1,0 +1,45 @@
+layout {
+  name "IDE"
+  split_direction "horizontal"
+
+  pane {
+    split_direction "vertical"
+
+    pane {
+      name "Editor"
+      focus true
+      edit "."
+      size "75%"
+      borderless true
+    }
+    
+    pane {
+      name "Terminal" 
+      stacked true
+
+      pane {
+        name "Runner" 
+        start_suspended true
+        command "pnpm"
+        args "dev"
+      }
+      
+      pane {
+        name "Test" 
+        cwd "."
+      }
+
+      pane {
+        expanded true
+        name "Commands" 
+        cwd "."
+      }
+    }
+  }
+
+  pane {
+    plugin location="zellij:status-bar"
+    borderless true
+    size 2
+  }
+}

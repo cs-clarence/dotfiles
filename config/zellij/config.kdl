@@ -193,7 +193,7 @@ on_force_close "quit"
 //    - true
 //    - false (Default)
 //
-simplified_ui true
+simplified_ui false
 
 // Choose the path to the default shell that zellij will use for opening new panes
 // Default: $SHELL
@@ -221,12 +221,12 @@ auto_layout true
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
-theme "dracula"
+theme "tokyo-night-dark"
 
 // The name of the default layout to load on startup
 // Default: "default"
 //
-default_layout "compact"
+default_layout "default"
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal
@@ -240,7 +240,7 @@ default_mode "locked"
 //   - true (default)
 //   - false
 //
-mouse_mode false
+mouse_mode true
 
 // Configure the scroll back buffer size
 // This is the number of lines zellij stores for each pane in the scroll back
@@ -267,7 +267,7 @@ copy_command "wl-copy"                    // wayland
 //   - system (default)
 //   - primary
 //
-copy_clipboard "primary"
+copy_clipboard "system"
 
 // Enable or disable automatic copy (and clear) of selection when releasing mouse
 // Default: true
@@ -277,14 +277,14 @@ copy_on_select false
 // Path to the default editor to use to edit pane scrollbuffer
 // Default: $EDITOR or $VISUAL
 //
-scrollback_editor "/usr/bin/vim"
+scrollback_editor "/usr/bin/nvim"
 
 // When attaching to an existing session with other users,
 // should the session be mirrored (true)
 // or should each user have their own cursor (false)
 // Default: false
 //
-// mirror_session true
+mirror_session false
 
 // The folder in which Zellij will look for layouts
 //
