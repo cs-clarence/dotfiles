@@ -30,8 +30,8 @@ export PATH="$NGROK_HOME/bin:$PATH"
 # NGROK end
 
 # MITM PROXY START
-export MITM_HOME="$HOME/.mitmproxy"
-export PATH="$MITM_HOME/bin:$PATH"
+export MITMPROXY_HOME="$HOME/.mitmproxy"
+export PATH="$MITMPROXY_HOME/bin:$PATH"
 # MITM PROXY END
 
 . "$HOME/.cargo/env"
@@ -43,13 +43,17 @@ export PATH="$MITM_HOME/bin:$PATH"
 export PATH="$HOME/.surrealdb:$PATH"
 
 # fnm
-export PATH="/home/rencedm112/.local/share/fnm:$PATH"
+export PATH="$HOME/.local/share/fnm:$PATH"
 eval "$(fnm env)"
 
 # pnpm
-export PNPM_HOME="/home/rencedm112/.local/share/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# zellij
+export ZELLIJ_HOME="$HOME/.zellij"
+export PATH="$ZELLIJ_HOME:$PATH"
