@@ -25,4 +25,5 @@ return {
   "sqlls",
   "taplo",
   "stylelint_lsp",
+  "unocss",
 }
