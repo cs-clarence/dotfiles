@@ -68,8 +68,17 @@ window#waybar.empty #window {
   padding: 0px 8px;
 }
 
-.modules-right > * > * {
+.modules-right > * > *,
+.modules-left > * > * {
   padding: 0px 8px;
+}
+
+.modules-left > * > *:first-child {
+  padding-left: 0px;
+}
+
+.modules-right > * > *:last-child {
+  padding-right: 0px;
 }
 
 #battery.charging,

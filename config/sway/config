@@ -5,6 +5,9 @@ include terminal.conf
 include menu.conf
 include keymaps.conf
 include workspace_binds.conf
+include lid.conf
+include appearance.conf
+include interaction.conf
 
 # Default config for sway
 #
