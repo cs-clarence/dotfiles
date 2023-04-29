@@ -8,9 +8,6 @@ local default_opts = { noremap = true, silent = true }
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- ToggleTerm keymaps
-set("t", [[<ESC>]], [[<C-\><C-n>]], default_opts)
-
 -- NeoToggleTree keymaps
 set("n", [[<leader>tt]], [[<cmd>Neotree toggle<cr>]], default_opts)
 
@@ -31,9 +28,6 @@ set("n", [[<A-l>]], [[<cmd>vertical resize +1<cr>]], default_opts)
 set("n", [[<S-l>]], [[<cmd>bnext<cr>]], default_opts)
 set("n", [[<S-h>]], [[<cmd>bprevious<cr>]], default_opts)
 set("n", "<leader>bd", [[<cmd>bdelete<cr>]], default_opts)
-
--- Toggle ToggleTerm
-set("n", [[<leader>tr]], [[<cmd>ToggleTerm<cr>]], default_opts)
 
 -- Tagbar
 set("n", [[<leader>tb]], [[<cmd>TagbarToggle<cr>]], default_opts)
