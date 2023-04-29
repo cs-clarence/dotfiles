@@ -7,7 +7,7 @@ sudo flatpak update
 source ./core.sh
 
 # Install the core tools
-if [[ ${#to_be_installed[@]} > 0 ]]; then
+if [[ ${#to_be_installed[@]} -gt 0 ]]; then
 	echo "Running install commands"
 
 	for cmd in install_commands; do

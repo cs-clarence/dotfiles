@@ -19,9 +19,7 @@ layout {
 
       pane {
         name "Runner" 
-        start_suspended true
-        command "pnpm"
-        args "dev"
+        cwd "."
       }
       
       pane {
