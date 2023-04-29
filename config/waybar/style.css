@@ -145,8 +145,7 @@ window#waybar.empty #window {
 }
 
 #mpd {
-  background-color: #66cc99;
-  color: #2a5c45;
+  color: #66cc99;
 }
 
 #mpd.disconnected {
