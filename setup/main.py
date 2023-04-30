@@ -2,6 +2,19 @@
 
 from lib import *
 
+pkgs = [
+    pkg("nvim", package="neovim"),
+    pkg("git"),
+    pkg("clang"),
+    pkg("cmake"),
+    pkg("shfmt"),
+    pkg("kitty"),
+    pkg("firefox"),
+    pkg("qbittorrent"),
+    pkg("vlc"),
+    pkg("flutter", install_type="snap-classic"),
+]
+
 
 def main():
     jobs = [
