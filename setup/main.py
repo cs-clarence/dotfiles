@@ -18,6 +18,7 @@ def main():
         InstallJob("kitty", dnf="kitty"),
         InstallJob("firefox", dnf="firefox"),
         InstallJob("qbittorent", dnf="qbittorrent"),
+        InstallJob("vlc", dnf="vlc"),
         InstallJob.snap_classic(
             "flutter",
             snap="flutter",

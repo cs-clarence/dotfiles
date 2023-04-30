@@ -4,7 +4,7 @@ from typing import Literal, NotRequired, TypedDict, Unpack
 
 import distro
 
-PackageType = Literal["native", "snap", "flatpak"]
+InstallSource = Literal["native", "snap", "flatpak", "script"]
 
 
 class PackageNameDict(TypedDict, total=False):
@@ -22,7 +22,7 @@ class InstallJob:
     package_name: PackageNameDict
     args: list[str]
     post_install_scripts: PostInstallScriptsDict
-    type: PackageType
+    type: InstallSource
 
     @staticmethod
     def snap(
@@ -58,7 +58,7 @@ class InstallJob:
         exe_name: str,
         args: list[str] = [],
         post_install: PostInstallScriptsDict = {},
-        type: PackageType = "native",
+        type: InstallSource = "native",
         **package_name: Unpack[PackageNameDict],
     ):
         self.executable_name = exe_name
