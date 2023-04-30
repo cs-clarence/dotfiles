@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import shutil
 import subprocess
 from typing import Literal, NotRequired, TypedDict, Unpack
@@ -69,28 +67,6 @@ class InstallJob:
         self.type = type
         self.args = args
         pass
-
-
-jobs = [
-    InstallJob(
-        "snap",
-        post_install={"fedora": ["sudo ls -s /var/lib/snapd/snap /snap"]},
-        dnf="snapd",
-    ),
-    InstallJob("nvim", dnf="neovim"),
-    InstallJob("git", dnf="git"),
-    InstallJob("clang", dnf="clang"),
-    InstallJob("cmake", dnf="cmake"),
-    InstallJob("shfmt", dnf="shfmt"),
-    InstallJob("kitty", dnf="kitty"),
-    InstallJob("firefox", dnf="firefox"),
-    InstallJob.snap_classic(
-        "flutter",
-        args=["--classic"],
-        snap="flutter",
-    ),
-    InstallJob.snap_classic("telegram-desktop", snap="telegram-desktop"),
-]
 
 
 def install_dnf_package(package_name: str) -> None:
@@ -170,7 +146,3 @@ def run_install_jobs(install_jobs: list[InstallJob]) -> None:
             run(install_job)
         else:
             print(f"{install_job.executable_name} is already installed")
-
-
-if __name__ == "__main__":
-    run_install_jobs(jobs)
