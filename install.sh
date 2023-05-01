@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
+shopt -s extglob
+shopt -s dotglob
 
 dir=$(realpath "$(dirname "$0")")
 
 declare -A files
 home_dir=~
-home_dir_replacements=(home/.* home/*.sh)
+home_dir_replacements=(home/*)
 unset "home_dir_replacements[0]" # remove .
 unset "home_dir_replacements[1]" # remove ..
 files[$home_dir]=${home_dir_replacements[*]}
