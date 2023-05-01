@@ -1,7 +1,7 @@
 local M = {}
 
 -- Which colorscheme to set
-local default = "vscode"
+local default = "dracula"
 
 M.active = default
 

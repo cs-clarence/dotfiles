@@ -2,7 +2,7 @@ return {
   "morhetz/gruvbox",
   "tomasr/molokai",
   "sonph/onehalf",
-  "dracula/vim",
+  "Mofiqul/dracula.nvim",
   "gosukiwi/vim-atom-dark",
   "joshdick/onedark.vim",
   "arcticicestudio/nord-vim",
@@ -13,7 +13,7 @@ return {
     lazy = false,
     priority = 2000,
     init = function()
-      vim.cmd([[colorscheme tokyonight]])
+      vim.cmd([[colorscheme dracula]])
     end,
   },
 }
