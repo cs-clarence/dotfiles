@@ -1,3 +1,5 @@
+@import url("./colors.css");
+
 * {
   /* `otf-font-awesome` is required to be installed for icons */
   font-family: "NotoSansM Nerd Font", Roboto, Helvetica, Arial, sans-serif;
@@ -5,7 +7,7 @@
   background: none;
   background-color: transparent;
   border: none;
-  color: #ffffff;
+  color: @foreground;
   transition: none;
   padding: 0px;
   margin: 0px;
@@ -14,9 +16,9 @@
 
 tooltip,
 window.popup {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: @background-darker;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid @background;
 }
 
 window#waybar.hidden {
@@ -35,23 +37,31 @@ window#waybar.empty #window {
 #mode {
   padding: 0 4px;
   border-radius: 0px;
-  background-color: rgba(0, 0, 0, 0.6);
-  color: #ffffff;
+  background-color: @background-darker;
+  color: @foreground;
 }
 
 /**
 * Semi Transparent White Background
 */
 #workspaces button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: @selection;
 }
 
 /**
 * White Bottom Border
 */
-#workspaces button.focused,
 #mode {
-  box-shadow: inset 0 -3px #ffffff;
+  box-shadow: inset 0 -3px @purple;
+}
+
+#workspaces button.focused {
+  background-color: @purple;
+  box-shadow: inset 0 -3px @foreground;
+}
+
+#workspaces button.focused label {
+  color: @background;
 }
 
 #scratchpad.empty {
@@ -59,13 +69,13 @@ window#waybar.empty #window {
 }
 
 #workspaces button.urgent {
-  background-color: #eb4d4b;
+  background-color: @red;
 }
 
 .modules-right,
 #window {
-  background-color: rgba(0, 0, 0, 0.6);
-  color: #ffffff;
+  background-color: @background-darker;
+  color: @foreground;
   border-radius: 8px;
   padding: 0px 8px;
 }
@@ -85,18 +95,18 @@ window#waybar.empty #window {
 
 #battery.charging,
 #battery.plugged {
-  color: #26a65b;
+  color: @green;
 }
 
 @keyframes blink {
   to {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: @foreground;
+    color: @background;
   }
 }
 
 #battery.critical:not(.charging) {
-  color: #f53c3c;
+  color: @red;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;
@@ -105,23 +115,23 @@ window#waybar.empty #window {
 }
 
 #network.disconnected {
-  color: #f53c3c;
+  color: @red;
 }
 
 #pulseaudio {
-  color: #f1c40f;
+  color: @yellow;
 }
 
 #pulseaudio.muted {
-  color: #90b1b1;
+  color: @cyan-muted;
 }
 
 #wireplumber {
-  color: #fff0f5;
+  color: @foreground;
 }
 
 #wireplumber.muted {
-  color: #f53c3c;
+  color: @red;
 }
 
 #custom-media {
@@ -152,23 +162,23 @@ window#waybar.empty #window {
 
 #tray > .needs-attention {
   -gtk-icon-effect: highlight;
-  background-color: #eb4d4b;
+  background-color: @red;
 }
 
 #mpd {
-  color: #66cc99;
+  color: @red;
 }
 
 #mpd.disconnected {
-  color: #f53c3c;
+  color: @red;
 }
 
 #mpd.stopped {
-  color: #90b1b1;
+  color: @cyan-muted;
 }
 
 #mpd.paused {
-  color: #51a37a;
+  color: @green;
 }
 
 /**
@@ -187,11 +197,11 @@ menuitem {
 }
 
 menuitem:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: @selection;
 }
 
 menuitem:disabled label {
-  color: #a6a6a6;
+  color: @comment;
 }
 
 menu {
@@ -200,7 +210,7 @@ menu {
 }
 
 separator {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: @comment;
   margin: 4px 0px;
 }
 
