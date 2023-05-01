@@ -170,3 +170,40 @@ window#waybar.empty #window {
 #mpd.paused {
   color: #51a37a;
 }
+
+/**
+* Tooltip
+*/
+tooltip label {
+  padding: 4px;
+}
+
+/**
+* Popup Menu
+*/
+menuitem {
+  padding: 4px 0px;
+  border-radius: 8px;
+}
+
+menuitem:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+menuitem:disabled label {
+  color: #a6a6a6;
+}
+
+menu {
+  padding: 4px;
+  border-radius: 8px;
+}
+
+separator {
+  background-color: rgba(255, 255, 255, 0.3);
+  margin: 4px 0px;
+}
+
+check {
+  padding: 0px 4px;
+}

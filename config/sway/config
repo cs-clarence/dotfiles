@@ -1,12 +1,13 @@
 # includes
+include variables.conf
 include background.conf
 include displays.conf
 include terminal.conf
 include menu.conf
-include keymaps.conf
-include workspace_binds.conf
+include bindsyms.conf
 include lid.conf
 include appearance.conf
+include workspaces.conf
 include interaction.conf
 
 # Default config for sway
