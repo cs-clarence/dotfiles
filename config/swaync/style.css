@@ -27,7 +27,7 @@
 @define-color noti-close-bg @red;
 @define-color noti-close-bg-hover @red-hover;
 
-@define-color bg-selected @background-selected;
+@define-color bg-selected @purple;
 
 .notification-row {
   outline: none;
