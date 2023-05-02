@@ -1,5 +1,8 @@
-@define-color background-darker rgba(30, 31, 41, 0.8);
+@define-color background-alpha rgba(30, 31, 41, 0.8);
 @define-color background #282a36;
+@define-color background-hover #424559;
+@define-color background-focus #44475a;
+@define-color background-selected #44475a;
 @define-color selection #44475a;
 @define-color foreground #f8f8f2;
 @define-color comment #6272a4;
@@ -10,4 +13,5 @@
 @define-color pink #ff79c6;
 @define-color purple #bd93f9;
 @define-color red #ff5555;
+@define-color red-hover #ff6e6e;
 @define-color yellow #f1fa8c;

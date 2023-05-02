@@ -1,4 +1,4 @@
-@import url("./colors.css");
+@import url("../common/colors.css");
 
 * {
   /* `otf-font-awesome` is required to be installed for icons */
@@ -16,7 +16,7 @@
 
 tooltip,
 window.popup {
-  background-color: @background-darker;
+  background-color: @background-alpha;
   border-radius: 8px;
   border: 1px solid @background;
 }
@@ -37,7 +37,7 @@ window#waybar.empty #window {
 #mode {
   padding: 0 4px;
   border-radius: 0px;
-  background-color: @background-darker;
+  background-color: @background-alpha;
   color: @foreground;
 }
 
@@ -74,7 +74,7 @@ window#waybar.empty #window {
 
 .modules-right,
 #window {
-  background-color: @background-darker;
+  background-color: @background-alpha;
   color: @foreground;
   border-radius: 8px;
   padding: 0px 8px;

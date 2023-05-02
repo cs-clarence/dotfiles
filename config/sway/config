@@ -9,6 +9,7 @@ include lid.conf
 include appearance.conf
 include workspaces.conf
 include interaction.conf
+include notifications.conf
 
 # Default config for sway
 #
