@@ -1,16 +1,18 @@
 return {
-  -- TreeSitter
-  "p00f/nvim-ts-rainbow",
-
-  -- TextObject
-  "nvim-treesitter/nvim-treesitter-textobjects",
-
-  -- Autotags
-  "windwp/nvim-ts-autotag",
 
   -- TreeSitter itself
   {
     "nvim-treesitter/nvim-treesitter",
+    dependencies = {
+      -- TreeSitter Rainbow Brackets
+      "p00f/nvim-ts-rainbow",
+
+      -- TextObject
+      "nvim-treesitter/nvim-treesitter-textobjects",
+
+      -- Autotags
+      "windwp/nvim-ts-autotag",
+    },
     config = function()
       local nvim_treesitter_configs_ok, nvim_treesitter_configs =
         pcall(require, "nvim-treesitter.configs")

@@ -42,9 +42,9 @@ return {
           -- Deletes all marks in current buffer.
           delete_buf = "dm<space>",
           -- Goes to next mark in buffer.
-          next = "]m",
+          next = "m]",
           -- Goes to previous mark in buffer.
-          prev = "[m",
+          prev = "m[",
           -- Previews mark (will wait for user input). press <cr> to just preview the next mark.
           preview = "m:",
           -- Sets a letter mark (will wait for input).

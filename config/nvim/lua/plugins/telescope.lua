@@ -1,5 +1,6 @@
 return {
   {
+
     "nvim-telescope/telescope.nvim",
     config = function()
       local plugin_ok, plugin = pcall(require, "telescope")
