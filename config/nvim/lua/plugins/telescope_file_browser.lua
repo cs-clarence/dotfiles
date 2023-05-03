@@ -6,8 +6,6 @@ return {
       "nvim-lua/plenary.nvim",
     },
     config = function()
-      require("telescope").load_extension("file_browser")
-
       local default_opts = require("defaults").keymap.opts
       local set = vim.keymap.set
 
