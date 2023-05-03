@@ -52,7 +52,7 @@ return {
             use_fd = true,
 
             -- Don't show gitignored files in the browser
-            -- respect_gitignore = true,
+            respect_gitignore = true,
 
             -- Show hidden files
             hidden = true,
