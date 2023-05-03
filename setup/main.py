@@ -8,7 +8,7 @@ pkgs = [
     pkg("clang"),
     pkg("cmake"),
     pkg("shfmt"),
-    pkg("kitty"),
+    pkg("alacritty"),
     pkg("firefox"),
     pkg("qbittorrent"),
     pkg("vlc"),
