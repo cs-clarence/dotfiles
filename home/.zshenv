@@ -57,3 +57,9 @@ esac
 # zellij
 export ZELLIJ_HOME="$HOME/.zellij"
 export PATH="$ZELLIJ_HOME:$PATH"
+# zellij end
+
+# fly install
+export FLYCTL_INSTALL="$HOME/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
+# fly end
