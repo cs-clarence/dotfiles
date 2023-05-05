@@ -1,0 +1,8 @@
+profile {
+	output 'NuVision US, Inc. IP24V1 0x00000001' mode 1920x1080@74.986Hz position 1366,0 scale 1
+	output 'Chimei Innolux Corporation 0x15E6 Unknown' mode 1366x768@60.003Hz position 0,300 scale 1
+}
+
+profile {
+	output 'NuVision US, Inc. IP24V1 0x00000001' mode 1920x1080@74.986Hz position 0,0 scale 1
+}

@@ -1,16 +1,16 @@
-[[language]]
-name = "unocss"
-scope = "source.unocss"
-file-types = [
-  "css",
-  "postcss",
-  "html",
-  "svelte",
-  "js",
-  "jsx",
-  "ts",
-  "tsx",
-  "vue",
-]
-language-server = { command = "unocss-language-server", args = ["--stdio"] }
-roots = ["unocss.config.ts", "unocss.config.js"]
+#[[language]]
+# name = "unocss"
+# scope = "source.unocss"
+# file-types = [
+#   "css",
+#   "postcss",
+#   "html",
+#   "svelte",
+#   "js",
+#   "jsx",
+#   "ts",
+#   "tsx",
+#   "vue",
+# ]
+# language-server = { command = "unocss-language-server", args = ["--stdio"] }
+# roots = ["unocss.config.ts", "unocss.config.js"]

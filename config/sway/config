@@ -10,6 +10,8 @@ include appearance.conf
 include workspaces.conf
 include interaction.conf
 include notifications.conf
+include inputs.conf
+include autostart.conf
 
 # Default config for sway
 #

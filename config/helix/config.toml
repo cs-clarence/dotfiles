@@ -1,1 +1,12 @@
-theme = "tokyonight"
+# 
+# Appearance
+#
+theme = "dracula"
+
+# 
+# Interactions
+#
+[editor]
+mouse = true
+auto-pairs = true
+auto-format = true
