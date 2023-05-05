@@ -12,6 +12,7 @@ include interaction.conf
 include notifications.conf
 include inputs.conf
 include autostart.conf
+include idle.conf
 
 # Default config for sway
 #
