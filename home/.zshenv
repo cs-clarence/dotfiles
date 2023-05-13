@@ -63,3 +63,8 @@ export PATH="$ZELLIJ_HOME:$PATH"
 export FLYCTL_INSTALL="$HOME/.fly"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
 # fly end
+
+# DENO
+export DENO_INSTALL="$HOME/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+# DENO END
