@@ -5,13 +5,11 @@ auto-format = false
 
 [[language]]
 name = "json"
-formatter = { command = 'prettier', args = ['invoke'] }
 formatter = { command = 'prettier', args = ["--parser", "json"] }
 auto-format = false
 
 [[language]]
 name = "css"
-formatter = { command = 'prettier', args = ['invoke'] }
 formatter = { command = 'prettier', args = ["--parser", "css"] }
 auto-format = false
 
