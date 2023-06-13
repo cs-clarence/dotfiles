@@ -23,7 +23,7 @@ return {
             icon = "▎",
             style = "icon",
           },
-          buffer_close_icon = "",
+          buffer_close_icon = "x",
           -- buffer_close_icon = '',
           modified_icon = "●",
           close_icon = "",

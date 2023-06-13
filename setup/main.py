@@ -3,8 +3,38 @@
 from lib import *
 
 pkgs = [
-    Pkg("nvim", package="neovim"),
+    Pkg("nvim", package_name="neovim"),
     Pkg("git"),
+    Pkg("zsh", post_install_scripts=["chsh -s $(which zsh)"]),
+    Pkg(
+        "snap",
+        package_name="snapd",
+        post_install_scripts=["sudo ln -s /var/lib/snapd/snap /snap"],
+    ),
+    Pkg(
+        "cargo",
+        install_type="script",
+        install_scripts=[
+            "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh"
+        ],
+    ),
+    Pkg(
+        "zimfw",
+        install_type="script",
+        install_scripts=[
+            "curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh"
+        ],
+    ),
+    Pkg(
+        "fnm",
+        install_type="script",
+        install_scripts=["curl -fsSL https://fnm.vercel.app/install | bash"],
+    ),
+    Pkg(
+        "bun",
+        install_type="script",
+        install_scripts=["curl -fsSL https://bun.sh/install | bash"],
+    ),
     Pkg("clang"),
     Pkg("cmake"),
     Pkg("shfmt"),

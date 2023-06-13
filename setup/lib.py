@@ -61,6 +61,10 @@ class InstallJob:
             post=post,
         )
 
+    @staticmethod
+    def noop() -> "InstallJob":
+        return InstallJob(install=[])
+
     def exec(self) -> None:
         if self.pre_install_scripts is not None:
             for cmd in self.pre_install_scripts:
@@ -109,25 +113,32 @@ class PackageName(TypedDict, total=False):
 class PackageInformation:
     executable: str
     install_type: InstallType | None = None
-    package: str | PackageName | None = None
+    package_name: str | PackageName | None = None
     pre_install_scripts: Scripts | None = None
     install_scripts: Scripts | None = None
     post_install_scripts: Scripts | None = None
 
     def create_install_job(self) -> InstallJob:
-        match self.install_type:
+        pkg_name = self.package_name or self.executable
+        install_type = self.install_type or "native-package-manager"
+
+        # check if executable is installed
+        if subprocess.run(["which", self.executable]).returncode == 0:
+            return InstallJob.noop()
+
+        match install_type:
             case "snap" | "snap-classic":
-                if self.package is None:
+                if pkg_name is None:
                     raise Exception("Package name is required for snap packages")
 
                 pkg = ""
-                if isinstance(self.package, str):
-                    pkg = self.package
+                if isinstance(pkg_name, str):
+                    pkg = pkg_name
                 else:
-                    if "snap" in self.package:
-                        pkg = self.package["snap"]
-                    elif "all" in self.package:
-                        pkg = self.package["all"]
+                    if "snap" in pkg_name:
+                        pkg = pkg_name["snap"]
+                    elif "all" in pkg_name:
+                        pkg = pkg_name["all"]
                     else:
                         raise Exception("Package name is required for snap packages")
 
@@ -151,25 +162,25 @@ class PackageInformation:
 
                 match distro_id:
                     case "fedora":
-                        if self.package is None:
+                        if pkg_name is None:
                             raise Exception(
                                 "Package name is required for native package manager"
                             )
 
                         pkg = ""
-                        if isinstance(self.package, str):
-                            pkg = self.package
+                        if isinstance(pkg_name, str):
+                            pkg = pkg_name
                         else:
-                            if "dnf" in self.package:
-                                pkg = self.package["dnf"]
-                            elif "all" in self.package:
-                                pkg = self.package["all"]
+                            if "dnf" in pkg_name:
+                                pkg = pkg_name["dnf"]
+                            elif "all" in pkg_name:
+                                pkg = pkg_name["all"]
                             else:
                                 raise Exception(
                                     "Package name is required for native package manager"
                                 )
 
-                        return InstallJob.snap(
+                        return InstallJob.dnf(
                             pkg,
                             pre=self.pre_install_scripts,
                             post=self.post_install_scripts,
@@ -178,17 +189,17 @@ class PackageInformation:
                         raise Exception("Not implemented")
 
             case "flatpak":
-                if self.package is None:
+                if pkg_name is None:
                     raise Exception("Package name is required for flatpak")
 
                 pkg = ""
-                if isinstance(self.package, str):
-                    pkg = self.package
+                if isinstance(pkg_name, str):
+                    pkg = pkg_name
                 else:
-                    if "flatpak" in self.package:
-                        pkg = self.package["flatpak"]
-                    elif "all" in self.package:
-                        pkg = self.package["all"]
+                    if "flatpak" in pkg_name:
+                        pkg = pkg_name["flatpak"]
+                    elif "all" in pkg_name:
+                        pkg = pkg_name["all"]
                     else:
                         raise Exception("Package name is required for flatpak")
 
