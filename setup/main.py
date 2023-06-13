@@ -12,6 +12,14 @@ pkgs = [
         post_install_scripts=["sudo ln -s /var/lib/snapd/snap /snap"],
     ),
     Pkg(
+        "rg",
+        package_name="ripgrep",
+    ),
+    Pkg(
+        "fd",
+        package_name="fd-find",
+    ),
+    Pkg(
         "cargo",
         install_type="script",
         install_scripts=[
