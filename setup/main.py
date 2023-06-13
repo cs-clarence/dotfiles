@@ -19,13 +19,6 @@ pkgs = [
         ],
     ),
     Pkg(
-        "zimfw",
-        install_type="script",
-        install_scripts=[
-            "curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh"
-        ],
-    ),
-    Pkg(
         "fnm",
         install_type="script",
         install_scripts=["curl -fsSL https://fnm.vercel.app/install | bash"],
