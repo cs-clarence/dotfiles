@@ -4,6 +4,12 @@ return {
   end,
   settings = {
     ["rust-analyzer"] = {
+      cargo = {
+        autoreload = true,
+        buildScripts = {
+          enable = true,
+        },
+      },
       inlayHints = {
         reborrowHints = {
           enable = "always",
