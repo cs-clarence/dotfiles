@@ -2,21 +2,31 @@ return {
   setup = function()
     vim.g.rust_recommended_style = false
   end,
-  settings = {
-    ["rust-analyzer"] = {
-      cargo = {
-        autoreload = true,
-        buildScripts = {
-          enable = true,
+  config = {
+    settings = {
+      ["rust-analyzer"] = {
+        cargo = {
+          autoreload = true,
+          buildScripts = {
+            enable = true,
+          },
         },
-      },
-      inlayHints = {
-        reborrowHints = {
-          enable = "always",
+        procMacro = {
+          ignored = {
+            ["async_trait"] = "async_trait",
+            ["tonic"] = "async_trait",
+            ["tonic::codegen"] = "async_trait",
+            ["axum"] = "async_trait",
+          },
         },
-        lifetimeElisionHints = {
-          enable = "always",
-          useParameterNames = true,
+        inlayHints = {
+          reborrowHints = {
+            enable = "always",
+          },
+          lifetimeElisionHints = {
+            enable = "always",
+            useParameterNames = true,
+          },
         },
       },
     },
