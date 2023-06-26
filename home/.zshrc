@@ -134,3 +134,6 @@ unset key
 # fnm
 export PATH="/home/rencedm112/.local/share/fnm:$PATH"
 eval "`fnm env`"
+
+# User completions
+fpath=($HOME/.zfunc $fpath)
