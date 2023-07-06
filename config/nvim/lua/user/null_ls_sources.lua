@@ -23,6 +23,12 @@ local default_sources = {
   -- Dart
   formatting.dart_format,
 
+  -- Dart
+  formatting.dart_format,
+
+  -- Terraform
+  formatting.terraform_fmt,
+
   -- Go
   formatting.gofumpt,
   formatting.goimports,
