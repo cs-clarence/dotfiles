@@ -42,6 +42,8 @@ zmodule zsh-users/zsh-completions --fpath src
 # Enables and configures smart and extensive tab completion.
 # completion must be sourced after all modules that add completion definitions.
 zmodule completion
+zmodule greymd/docker-zsh-completion --fpath docker/cli/master/contrib/completion/zsh
+zmodule greymd/docker-zsh-completion --fpath compose/cli/master/contrib/completion/zsh
 
 #
 # Modules that must be initialized last
