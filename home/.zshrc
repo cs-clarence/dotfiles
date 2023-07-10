@@ -89,6 +89,13 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 #typeset -A ZSH_HIGHLIGHT_STYLES
 #ZSH_HIGHLIGHT_STYLES[comment]='fg=242'
 
+
+# -----------------
+# User completions
+# NOTE: Must before Intialize modules
+# -----------------
+fpath+=$HOME/.zfunc
+
 # ------------------
 # Initialize modules
 # ------------------
@@ -134,6 +141,3 @@ unset key
 # fnm
 export PATH="/home/rencedm112/.local/share/fnm:$PATH"
 eval "`fnm env`"
-
-# User completions
-fpath=($HOME/.zfunc $fpath)
