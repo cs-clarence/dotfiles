@@ -44,6 +44,7 @@ zmodule zsh-users/zsh-completions --fpath src
 zmodule completion
 zmodule greymd/docker-zsh-completion --fpath docker/cli/master/contrib/completion/zsh
 zmodule greymd/docker-zsh-completion --fpath compose/cli/master/contrib/completion/zsh
+zmodule macunha1/zsh-terraform --fpath ./
 
 #
 # Modules that must be initialized last
