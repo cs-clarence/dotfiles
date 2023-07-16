@@ -72,3 +72,7 @@ export PATH="$DENO_INSTALL/bin:$PATH"
 # PLEASE
 export PATH="$HOME/.please/bin:$PATH"
 # PLEASE END
+
+# MOONREPO START
+export PATH="$HOME/.moon/bin:$PATH"
+# MOONREPO END
