@@ -1,6 +1,9 @@
 return {
   {
     "folke/which-key.nvim",
+    cond = function()
+      return not vim.g.vscode
+    end,
     config = function()
       -- NOTE: I don't have much use for which-key for now so I have no configuration here
       local which_key_ok, whick_key = pcall(require, "which-key")

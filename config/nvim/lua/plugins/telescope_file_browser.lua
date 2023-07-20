@@ -1,6 +1,9 @@
 return {
   {
     "nvim-telescope/telescope-file-browser.nvim",
+    cond = function()
+      return not vim.g.vscode
+    end,
     dependencies = {
       "nvim-telescope/telescope.nvim",
       "nvim-lua/plenary.nvim",

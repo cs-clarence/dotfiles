@@ -2,6 +2,9 @@ return {
   {
     "xiyaowong/transparent.nvim",
     lazy = false,
+    cond = function()
+      return not vim.g.vscode
+    end,
     config = function()
       local ok, transparent = pcall(require, "transparent")
 

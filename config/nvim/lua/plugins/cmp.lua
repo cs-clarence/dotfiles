@@ -1,6 +1,5 @@
 return {
   -- "hrsh7th/cmp-nvim-lua",
-  "uga-rosa/cmp-dictionary",
   {
     "hrsh7th/nvim-cmp",
     cond = function()
@@ -17,6 +16,7 @@ return {
       "hrsh7th/cmp-calc",
       "hrsh7th/cmp-nvim-lsp-document-symbol",
       "saadparwaiz1/cmp_luasnip",
+      "uga-rosa/cmp-dictionary",
     },
     config = function()
       local cmp_ok, cmp = pcall(require, "cmp")

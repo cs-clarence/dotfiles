@@ -3,6 +3,9 @@ return {
   -- TreeSitter itself
   {
     "nvim-treesitter/nvim-treesitter",
+    cond = function()
+      return not vim.g.vscode
+    end,
     dependencies = {
       -- TreeSitter Rainbow Brackets
       "p00f/nvim-ts-rainbow",

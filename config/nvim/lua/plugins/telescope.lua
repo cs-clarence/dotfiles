@@ -3,6 +3,9 @@ return {
 
     "nvim-telescope/telescope.nvim",
     lazy = false,
+    cond = function()
+      return not vim.g.vscode
+    end,
     config = function()
       local plugin_ok, plugin = pcall(require, "telescope")
       if not plugin_ok then
