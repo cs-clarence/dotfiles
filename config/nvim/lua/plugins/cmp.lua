@@ -3,6 +3,9 @@ return {
   "uga-rosa/cmp-dictionary",
   {
     "hrsh7th/nvim-cmp",
+    cond = function()
+      return not vim.g.vscode
+    end,
     dependencies = {
       -- Code Completion
       "hrsh7th/cmp-nvim-lsp",

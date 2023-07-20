@@ -2,6 +2,9 @@ return {
   {
     "lvimuser/lsp-inlayhints.nvim",
     lazy = false,
+    cond = function()
+      return not vim.g.vscode
+    end,
     config = function()
       local ok, plugin = pcall(require, "lsp-inlayhints")
       if not ok then

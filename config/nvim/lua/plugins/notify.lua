@@ -1,6 +1,9 @@
 return {
   {
     "rcarriga/nvim-notify",
+    cond = function()
+      return not vim.g.vscode
+    end,
     config = function()
       local ok, notify = pcall(require, "notify")
       if not ok then

@@ -1,6 +1,9 @@
 return {
   {
     "akinsho/bufferline.nvim",
+    cond = function()
+      return not vim.g.vscode
+    end,
     config = function()
       local bufferline_ok, bufferline = pcall(require, "bufferline")
       if not bufferline_ok then

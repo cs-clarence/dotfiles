@@ -1,10 +1,23 @@
 return {
-  "williamboman/mason.nvim",
-  "williamboman/mason-lspconfig.nvim",
+  {
+    "williamboman/mason.nvim",
+    cond = function()
+      return not vim.g.vscode
+    end,
+  },
+  {
+    "williamboman/mason-lspconfig.nvim",
+    cond = function()
+      return not vim.g.vscode
+    end,
+  },
   {
     "neovim/nvim-lspconfig",
     lazy = false,
     priority = 1000,
+    cond = function()
+      return not vim.g.vscode
+    end,
     config = function()
       -- Neoconf runs first
       do

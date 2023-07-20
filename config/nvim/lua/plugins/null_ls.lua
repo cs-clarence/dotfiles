@@ -1,6 +1,9 @@
 return {
   {
     "jose-elias-alvarez/null-ls.nvim",
+    cond = function()
+      return not vim.g.vscode
+    end,
     config = function()
       local null_ls_ok, null_ls = pcall(require, "null-ls")
       if not null_ls_ok then

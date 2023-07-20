@@ -1,21 +1,25 @@
 return {
-	{
-		"nathom/filetype.nvim",
-		config = function()
-			local filetype_ok, filetype = pcall(require, "filetype")
-			if not filetype_ok then
-				vim.notify("Failed to require filetype")
-				return
-			end
+  {
+    "nathom/filetype.nvim",
+    cond = function()
+      return not vim.g.vscode
+    end,
+    config = function()
+      local filetype_ok, filetype = pcall(require, "filetype")
+      if not filetype_ok then
+        vim.notify("Failed to require filetype")
+        return
+      end
 
-			local user_has_custom_filetypes, user_filetypes = pcall(require, "user.filetypes")
+      local user_has_custom_filetypes, user_filetypes =
+        pcall(require, "user.filetypes")
 
-			if not user_has_custom_filetypes then
-				vim.notify("Failed to load user.filetypes")
-				user_filetypes = {}
-			end
+      if not user_has_custom_filetypes then
+        vim.notify("Failed to load user.filetypes")
+        user_filetypes = {}
+      end
 
-			filetype.setup(user_filetypes)
-		end,
-	},
+      filetype.setup(user_filetypes)
+    end,
+  },
 }

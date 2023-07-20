@@ -1,6 +1,9 @@
 return {
   {
     "chentoast/marks.nvim",
+    cond = function()
+      return not vim.g.vscode
+    end,
     config = function()
       local plugin_ok, plugin = pcall(require, "marks")
 

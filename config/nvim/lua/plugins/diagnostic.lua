@@ -1,7 +1,9 @@
 return {
   {
     "folke/trouble.nvim",
-
+    cond = function()
+      return not vim.g.vscode
+    end,
     config = function()
       local signs = {
         { name = "DiagnosticSignError", text = "" },

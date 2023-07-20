@@ -1,3 +1,8 @@
-return { {
-  "MunifTanjim/nui.nvim",
-} }
+return {
+  {
+    "MunifTanjim/nui.nvim",
+    cond = function()
+      return not vim.g.vscode
+    end,
+  },
+}

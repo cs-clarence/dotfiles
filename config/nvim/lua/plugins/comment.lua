@@ -1,6 +1,9 @@
 return {
   {
     "numToStr/Comment.nvim",
+    cond = function()
+      return not vim.g.vscode
+    end,
     config = function()
       local comment_ok, comment = pcall(require, "Comment")
 

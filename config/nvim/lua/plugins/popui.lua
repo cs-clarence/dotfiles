@@ -1,6 +1,9 @@
 return {
   -- {
   --   "hood/popui.nvim",
+  --   cond = function()
+  --     return not vim.g.vscode
+  --   end,
   --   config = function()
   --     vim.ui.select = require("popui.ui-overrider")
   --     vim.ui.input = require("popui.input-overrider")

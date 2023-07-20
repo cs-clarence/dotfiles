@@ -2,6 +2,9 @@ return {
   "zbirenbaum/copilot-cmp",
   {
     "zbirenbaum/copilot.lua",
+    cond = function()
+      return not vim.g.vscode
+    end,
     config = function()
       local copilot_ok, copilot = pcall(require, "copilot")
 

@@ -1,7 +1,9 @@
 return {
   {
     "nvim-lualine/lualine.nvim",
-
+    cond = function()
+      return not vim.g.vscode
+    end,
     config = function()
       local lualine_ok, lualine = pcall(require, "lualine")
       if not lualine_ok then

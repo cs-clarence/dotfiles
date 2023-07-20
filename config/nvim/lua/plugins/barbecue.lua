@@ -1,6 +1,9 @@
 return {
   {
     "utilyre/barbecue.nvim",
+    cond = function()
+      return not vim.g.vscode
+    end,
     dependencies = {
       "SmiteshP/nvim-navic",
       "nvim-tree/nvim-web-devicons", -- optional dependency
