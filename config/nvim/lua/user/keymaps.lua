@@ -24,11 +24,6 @@ set("n", [[<A-j>]], [[<cmd>resize +1<cr>]], default_opts)
 set("n", [[<A-h>]], [[<cmd>vertical resize -1<cr>]], default_opts)
 set("n", [[<A-l>]], [[<cmd>vertical resize +1<cr>]], default_opts)
 
--- Buffer control
-set("n", [[<S-l>]], [[<cmd>bnext<cr>]], default_opts)
-set("n", [[<S-h>]], [[<cmd>bprevious<cr>]], default_opts)
-set("n", "<leader>bd", [[<cmd>bdelete<cr>]], default_opts)
-
 -- Tagbar
 set("n", [[<leader>tb]], [[<cmd>TagbarToggle<cr>]], default_opts)
 
@@ -52,8 +47,55 @@ set("n", [[<leader>dt]], [[<cmd>TroubleToggle todo<cr>]], default_opts)
 -- Diagnostics
 set("n", [[<leader>d]], vim.diagnostic.open_float, default_opts)
 set("n", [[<leader>df]], vim.diagnostic.open_float, default_opts)
-set("n", [=[[d]=], vim.diagnostic.goto_prev, default_opts)
-set("n", [=[]d]=], vim.diagnostic.goto_next, default_opts)
+if vim.g.vscode then
+  -- Quickfix List
+  set(
+    "n",
+    [=[<leader>ca]=],
+    [[<cmd>call VSCodeNotify('editor.action.quickFix')<cr>]],
+    default_opts
+  )
+
+  -- Diagnostic Traversal
+  set(
+    "n",
+    [=[[d]=],
+    [[<cmd>call VSCodeNotify('editor.action.marker.nextInFiles')<cr>]],
+    default_opts
+  )
+  set(
+    "n",
+    [=[]d]=],
+    [[<cmd>call VSCodeNotify('editor.action.marker.nextInFiles')<cr>]],
+    default_opts
+  )
+  -- Tab Control
+  set(
+    "n",
+    [[<S-l>]],
+    [[<cmd>call VSCodeNotify('workbench.action.nextEditorInGroup')<cr>]],
+    default_opts
+  )
+  set(
+    "n",
+    [[<S-h>]],
+    [[<cmd>call VSCodeNotify('workbench.action.previousEditorInGroup')<cr>]],
+    default_opts
+  )
+  set(
+    "n",
+    "<leader>bd",
+    [[<cmd>call VSCodeNotify('workbench.action.closeActiveEditor')<cr>]],
+    default_opts
+  )
+else
+  set("n", [=[[d]=], vim.diagnostic.goto_prev, default_opts)
+  set("n", [=[]d]=], vim.diagnostic.goto_next, default_opts)
+  -- Buffer control
+  set("n", [[<S-l>]], [[<cmd>bnext<cr>]], default_opts)
+  set("n", [[<S-h>]], [[<cmd>bprevious<cr>]], default_opts)
+  set("n", "<leader>bd", [[<cmd>bdelete<cr>]], default_opts)
+end
 
 -- Gitsigns
 set("n", [[<leader>cb]], [[<cmd>Gitsigns blame_line<cr>]], default_opts)
