@@ -20,7 +20,7 @@ return {
           },
         },
         inlayHints = {
-          reborrowHints = {
+          expressionAdjustmentHints = {
             enable = "always",
           },
           lifetimeElisionHints = {
