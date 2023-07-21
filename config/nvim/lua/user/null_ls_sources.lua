@@ -45,6 +45,9 @@ local default_sources = {
   -- Docker
   diagnostics.hadolint,
 
+  -- Protobuf Linter
+  diagnostics.protolint,
+
   -- C++, C
   formatting.clang_format,
 
