@@ -8,6 +8,10 @@ local default_opts = { noremap = true, silent = true }
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+local function t(str)
+  return vim.api.nvim_replace_termcodes(str, true, true, true)
+end
+
 -- NeoToggleTree keymaps
 set("n", [[<leader>tt]], [[<cmd>Neotree toggle<cr>]], default_opts)
 
@@ -49,45 +53,50 @@ set("n", [[<leader>d]], vim.diagnostic.open_float, default_opts)
 set("n", [[<leader>df]], vim.diagnostic.open_float, default_opts)
 if vim.g.vscode then
   -- Quickfix List
-  set(
-    "n",
-    [=[<leader>ca]=],
-    [[<cmd>call VSCodeNotify('editor.action.quickFix')<cr>]],
-    default_opts
-  )
+  set("n", [=[<leader>ca]=], function()
+    vim.fn.VSCodeNotify("editor.action.quickFix")
+  end, default_opts)
 
   -- Diagnostic Traversal
-  set(
-    "n",
-    [=[[d]=],
-    [[<cmd>call VSCodeNotify('editor.action.marker.nextInFiles')<cr>]],
-    default_opts
-  )
-  set(
-    "n",
-    [=[]d]=],
-    [[<cmd>call VSCodeNotify('editor.action.marker.nextInFiles')<cr>]],
-    default_opts
-  )
+  set("n", [=[[d]=], function()
+    vim.fn.VSCodeNotify("editor.action.marker.nextInFiles")
+  end, default_opts)
+
+  set("n", [=[]d]=], function()
+    vim.fn.VSCodeNotify("editor.action.marker.nextInFiles")
+  end, default_opts)
+
   -- Tab Control
-  set(
-    "n",
-    [[<S-l>]],
-    [[<cmd>call VSCodeNotify('workbench.action.nextEditorInGroup')<cr>]],
-    default_opts
-  )
-  set(
-    "n",
-    [[<S-h>]],
-    [[<cmd>call VSCodeNotify('workbench.action.previousEditorInGroup')<cr>]],
-    default_opts
-  )
-  set(
-    "n",
-    "<leader>bd",
-    [[<cmd>call VSCodeNotify('workbench.action.closeActiveEditor')<cr>]],
-    default_opts
-  )
+  set("n", [[<S-l>]], function()
+    vim.fn.VSCodeNotify("workbench.action.nextEditorInGroup")
+  end, default_opts)
+
+  set("n", [[<S-h>]], function()
+    vim.fn.VSCodeNotify("workbench.action.previousEditorInGroup")
+  end, default_opts)
+  set("n", "<leader>bd", function()
+    vim.fn.VSCodeNotify("workbench.action.closeActiveEditor")
+  end, default_opts)
+
+  -- Rename
+  set("n", "<leader>rn", function()
+    vim.fn.VSCodeNotify("editor.action.rename")
+  end, default_opts)
+
+  -- Comment
+  set("v", "gc", function()
+    vim.fn.VSCodeNotifyRange(
+      "editor.action.commentLine",
+      vim.fn.line("v"),
+      vim.fn.line("."),
+      0
+    )
+    vim.api.nvim_feedkeys(t([[<ESC>]]), "m", false)
+  end, default_opts)
+  -- Comment
+  set("n", "gcc", function()
+    vim.fn.VSCodeCall("editor.action.commentLine")
+  end, default_opts)
 else
   set("n", [=[[d]=], vim.diagnostic.goto_prev, default_opts)
   set("n", [=[]d]=], vim.diagnostic.goto_next, default_opts)
