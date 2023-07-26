@@ -67,11 +67,11 @@ if vim.g.vscode then
   end, default_opts)
 
   -- Tab Control
-  set("n", [[<S-l>]], function()
+  set("n", [[<C-l>]], function()
     vim.fn.VSCodeNotify("workbench.action.nextEditorInGroup")
   end, default_opts)
 
-  set("n", [[<S-h>]], function()
+  set("n", [[<C-h>]], function()
     vim.fn.VSCodeNotify("workbench.action.previousEditorInGroup")
   end, default_opts)
   set("n", "<leader>bd", function()
@@ -101,8 +101,8 @@ else
   set("n", [=[[d]=], vim.diagnostic.goto_prev, default_opts)
   set("n", [=[]d]=], vim.diagnostic.goto_next, default_opts)
   -- Buffer control
-  set("n", [[<S-l>]], [[<cmd>bnext<cr>]], default_opts)
-  set("n", [[<S-h>]], [[<cmd>bprevious<cr>]], default_opts)
+  set("n", [[<C-l>]], [[<cmd>bnext<cr>]], default_opts)
+  set("n", [[<C-h>]], [[<cmd>bprevious<cr>]], default_opts)
   set("n", "<leader>bd", [[<cmd>bdelete<cr>]], default_opts)
 end
 
