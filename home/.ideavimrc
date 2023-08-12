@@ -1,2 +1,10 @@
 let mapleader = " "
-
+nmap <C-L> <Action>(NextTab)
+nmap <C-H> <Action>(PreviousTab)
+nmap <leader>bd <Action>(CloseEditor)
+nmap <leader>rn <Action>(RenameElement)
+nmap <leader>rf <Action>(ReformatCode)
+nmap ]d <Action>(GotoNextError)
+nmap [d <Action>(GotoPreviousError)
+vmap gc <Action>(CommentByLineComment)
+nmap gcc <Action>(CommentByLineComment)
