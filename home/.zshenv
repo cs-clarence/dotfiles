@@ -76,3 +76,6 @@ export PATH="$HOME/.please/bin:$PATH"
 # MOONREPO START
 export PATH="$HOME/.moon/bin:$PATH"
 # MOONREPO END
+source "/home/rencedm112/.rover/env"
+
+export PATH="$HOME/.zig:$PATH"
