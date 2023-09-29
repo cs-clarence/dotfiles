@@ -141,3 +141,6 @@ unset key
 # fnm
 export PATH="/home/rencedm112/.local/share/fnm:$PATH"
 eval "`fnm env`"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/terraform terraform
