@@ -30,8 +30,8 @@ local default_sources = {
   formatting.terraform_fmt,
 
   -- Go
-  formatting.gofumpt,
-  formatting.goimports,
+  -- formatting.gofumpt,
+  -- formatting.goimports,
   formatting.goimports_reviser,
   formatting.golines,
 
