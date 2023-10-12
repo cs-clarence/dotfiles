@@ -2,6 +2,7 @@ let mapleader = " "
 nmap <C-L> <Action>(NextTab)
 nmap <C-H> <Action>(PreviousTab)
 nmap <leader>bd <Action>(CloseEditor)
+nmap <leader>ca <Action>(ShowIntentionActions)
 nmap <leader>rn <Action>(RenameElement)
 nmap <leader>rf <Action>(ReformatCode)
 nmap ]d <Action>(GotoNextError)
