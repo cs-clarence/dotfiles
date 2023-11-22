@@ -79,3 +79,8 @@ export PATH="$HOME/.moon/bin:$PATH"
 source "/home/rencedm112/.rover/env"
 
 export PATH="$HOME/.zig:$PATH"
+
+# PlatformIO
+export PLATFORMIO_HOME="$HOME/.platformio"
+export PATH="$PLATFORMIO_HOME/penv/bin:$PATH"
+# PlatformIO end
