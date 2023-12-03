@@ -40,7 +40,8 @@ export PATH="$MITMPROXY_HOME/bin:$PATH"
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 # END GVM
 
-export PATH="$HOME/.surrealdb:$PATH"
+export SURREALDB_HOME="$HOME/.surrealdb"
+export PATH="$SURREALDB_HOME:$PATH"
 
 # fnm
 export PATH="$HOME/.local/share/fnm:$PATH"
