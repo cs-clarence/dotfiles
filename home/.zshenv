@@ -85,3 +85,7 @@ export PATH="$HOME/.zig:$PATH"
 export PLATFORMIO_HOME="$HOME/.platformio"
 export PATH="$PLATFORMIO_HOME/penv/bin:$PATH"
 # PlatformIO end
+
+# ESP-rs
+. $HOME/export-esp.sh
+
