@@ -88,3 +88,5 @@ export PATH="$HOME/.zig:$PATH"
 
 # ESP-rs and IDF
 . $HOME/export-esp.sh
+
+export ESP_IDF_HOME="$HOME/esp/esp-idf"
