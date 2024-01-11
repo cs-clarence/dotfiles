@@ -1,6 +1,6 @@
 # history = 10000
 import = ["/home/rencedm112/.config/alacritty/themes/dracula.toml"]
-multiplier = 3
+# multiplier = 3
 
 [env]
 TERM = "xterm-256color"
