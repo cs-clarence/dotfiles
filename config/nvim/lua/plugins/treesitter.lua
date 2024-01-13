@@ -50,11 +50,7 @@ return {
           -- colors = {}, -- table of hex strings
           -- termcolors = {} -- table of colour name strings
         },
-        context_commentstring = {
-          enable_autocmd = false, -- Not sure what this is for
-          enable = true,
-        },
-
+        context_commentstring = {},
         textobjects = {
           swap = {
             enable = true,
