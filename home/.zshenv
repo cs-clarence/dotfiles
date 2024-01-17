@@ -90,3 +90,8 @@ export PATH="$HOME/.zig:$PATH"
 . $HOME/export-esp.sh
 
 # export IDF_PATH="$HOME/esp/esp-idf"
+
+# ZVM, Zig
+export ZVM_HOME="$HOME/.zvm/self"
+export PATH="$PATH:$HOME/.zvm/bin"
+export PATH="$PATH:$ZVM_INSTALL/"
