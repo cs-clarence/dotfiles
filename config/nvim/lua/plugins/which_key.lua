@@ -5,7 +5,7 @@ return {
       return not vim.g.vscode
     end,
     config = function()
-      -- NOTE: I don't have much use for which-key for now so I have no configuration here
+      -- NOTE: I don't have much use for which-key for now so I have specific keymaps here
       local which_key_ok, whick_key = pcall(require, "which-key")
       if not which_key_ok then
         vim.notify("Failed to reqire which-key")

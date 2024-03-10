@@ -10,7 +10,7 @@ return {
         return
       end
 
-      local sources_ok, sources = pcall(require, "user.null_ls_sources")
+      local sources_ok, sources = pcall(require, "user.none_ls_sources")
       if not sources_ok then
         sources = {}
       end

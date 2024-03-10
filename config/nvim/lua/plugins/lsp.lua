@@ -1,18 +1,24 @@
 return {
   {
     "williamboman/mason.nvim",
+    lazy = false,
     cond = function()
       return not vim.g.vscode
     end,
   },
   {
     "williamboman/mason-lspconfig.nvim",
+    lazy = false,
     cond = function()
       return not vim.g.vscode
     end,
   },
   {
     "neovim/nvim-lspconfig",
+    dependencies = {
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
+    },
     lazy = false,
     priority = 1000,
     cond = function()

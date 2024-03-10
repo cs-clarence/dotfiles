@@ -2,6 +2,8 @@ local M = {}
 local initialized = false
 function M.init()
   vim.g.mapleader = " "
+  vim.g.maplocalleader = " "
+
   if initialized then
     error("init() should be only called once")
   end
@@ -19,7 +21,7 @@ function M.init()
   end
   vim.opt.rtp:prepend(lazypath)
 
-  -- Autocommand that reloads neovim whenever you save the plugins.lua file, doesn't work properly
+  -- Autocommand that reloads neovim whenever you save the plugins.lua file, doesn't work properly so comment it out
   -- vim.cmd([[
   -- augroup packer_user_config
   --   autocmd!
@@ -33,6 +35,7 @@ function M.init()
     return
   end
 
+  -- Loads the the files in the plugins folder
   lazy.setup("plugins")
 end
 
