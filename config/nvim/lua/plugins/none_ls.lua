@@ -1,6 +1,6 @@
 return {
   {
-    "jose-elias-alvarez/null-ls.nvim",
+    "nvimtools/none-ls.nvim",
     cond = function()
       return not vim.g.vscode
     end,
