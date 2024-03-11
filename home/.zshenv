@@ -34,9 +34,8 @@ export MITMPROXY_HOME="$HOME/.mitmproxy"
 export PATH="$MITMPROXY_HOME/bin:$PATH"
 # MITM PROXY END
 
-$cargo_env="$HOME/.cargo/env"
-if [ -f $cargo_env ]; then
-  . $cargo_env
+if [ -f "$HOME/.cargo/env" ]; then
+  . "$HOME/.cargo/env"
 fi
 
 # GVM
@@ -49,6 +48,7 @@ export PATH="$SURREALDB_HOME:$PATH"
 # fnm
 export PATH="$HOME/.local/share/fnm:$PATH"
 eval "$(fnm env)"
+# fnm
 
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
@@ -82,9 +82,8 @@ export PATH="$HOME/.moon/bin:$PATH"
 # MOONREPO END
 
 # ROVER START
-$rover_env="$HOME/.rover/env"
-if [ -f $rover_env ]; then
-  . $rover_env
+if [ -f "$HOME/.rover/env" ]; then
+  . "$HOME/.rover/env"
 fi
 # ROVER END
 
@@ -96,9 +95,8 @@ export PATH="$HOME/.zig:$PATH"
 # PlatformIO end
 
 # ESP-rs and IDF
-$export_esp="$HOME/export-esp.sh"
-if [ -f $export_esp ]; then
-  . $export_esp
+if [ -f "$HOME/export-esp.sh" ]; then
+  . "$HOME/export-esp.sh"
 fi
 
 # export IDF_PATH="$HOME/esp/esp-idf"
