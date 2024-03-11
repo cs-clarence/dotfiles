@@ -4,6 +4,7 @@ from dataclasses import dataclass
 from typing import Literal, NotRequired, Required, TypedDict
 
 import distro
+import os
 
 Scripts = list[str | list[str]]
 
@@ -69,20 +70,20 @@ class InstallJob:
         if self.pre_install_scripts is not None:
             for cmd in self.pre_install_scripts:
                 if isinstance(cmd, str):
-                    subprocess.run(WS.split(cmd))
+                    os.system(cmd)
                 else:
                     subprocess.run(cmd)
 
         for cmd in self.install_scripts:
             if isinstance(cmd, str):
-                subprocess.run(WS.split(cmd))
+                os.system(cmd)
             else:
                 subprocess.run(cmd)
 
         if self.post_install_scripts is not None:
             for cmd in self.post_install_scripts:
                 if isinstance(cmd, str):
-                    subprocess.run(WS.split(cmd))
+                    os.system(cmd)
                 else:
                     subprocess.run(cmd)
 
@@ -117,6 +118,8 @@ class PackageInformation:
     pre_install_scripts: Scripts | None = None
     install_scripts: Scripts | None = None
     post_install_scripts: Scripts | None = None
+    has_gui: bool = False
+    required: bool = False
 
     def create_install_job(self) -> InstallJob:
         pkg_name = self.package_name or self.executable
@@ -186,7 +189,7 @@ class PackageInformation:
                             post=self.post_install_scripts,
                         )
                     case _:
-                        raise Exception(f"Native package manager installation for {distro_id} is not yet implemented")
+                        raise Exception(f"Native package manager installation for '{distro_id}' is not yet implemented")
 
             case "flatpak":
                 if pkg_name is None:
