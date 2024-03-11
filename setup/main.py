@@ -29,12 +29,12 @@ pkgs = [
     Pkg(
         "fnm",
         install_type="script",
-        install_scripts=["curl -fsSL https://fnm.vercel.app/install | bash"],
+        install_scripts=["curl -fsSL https://fnm.vercel.app/install | sh"],
     ),
     Pkg(
         "bun",
         install_type="script",
-        install_scripts=["curl -fsSL https://bun.sh/install | bash"],
+        install_scripts=["curl -fsSL https://bun.sh/install | sh"],
     ),
     Pkg("clang"),
     Pkg("cmake"),

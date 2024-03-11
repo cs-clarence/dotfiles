@@ -161,7 +161,7 @@ class PackageInformation:
                 distro_id = distro.id()
 
                 match distro_id:
-                    case "fedora":
+                    case "fedora" | "fedoraremixforwsl":
                         if pkg_name is None:
                             raise Exception(
                                 "Package name is required for native package manager"
@@ -186,7 +186,7 @@ class PackageInformation:
                             post=self.post_install_scripts,
                         )
                     case _:
-                        raise Exception("Not implemented")
+                        raise Exception(f"Native package manager installation for {distro_id} is not yet implemented")
 
             case "flatpak":
                 if pkg_name is None:

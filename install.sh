@@ -12,6 +12,11 @@ unset "home_dir_replacements[1]" # remove ..
 files[$home_dir]=${home_dir_replacements[*]}
 
 config_dir=~/.config
+
+if [[ ! -f $config_dir ]]; then
+   mkdir -p $config_dir
+fi
+
 config_dir_replacements=(config/*)
 files[$config_dir]=${config_dir_replacements[*]}
 
