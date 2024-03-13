@@ -58,6 +58,7 @@ return {
         Operator = "",
         TypeParameter = "",
         Copilot = "",
+        Codeium = "",
       }
 
       local source_name_cachce = {}
