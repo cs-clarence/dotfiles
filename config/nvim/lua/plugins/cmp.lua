@@ -166,6 +166,7 @@ return {
           { name = "calc" },
           { name = "copilot" },
           { name = "crates" },
+          { name = "codeium" },
           -- I replaced this plugin with lua-dev
           -- { name = "nvim_lua" },
         }, {

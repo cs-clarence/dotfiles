@@ -1,7 +1,8 @@
 return {
-  "zbirenbaum/copilot-cmp",
+  { "zbirenbaum/copilot-cmp", enabled = false },
   {
     "zbirenbaum/copilot.lua",
+    enabled = false,
     cond = function()
       return not vim.g.vscode
     end,
