@@ -11,8 +11,8 @@ o.timeoutlen = 1000 -- how long should vim wait for a command to complete
 
 -- Tabs/Indents
 o.expandtab = true -- convert tabs to spaces
-o.tabstop = 2 -- insert 2 spaces for a tab
-o.shiftwidth = 2 -- insert 2 spaces for indents
+o.tabstop = 4 -- insert 2 spaces for a tab
+o.shiftwidth = 4 -- insert 2 spaces for indents
 o.smartindent = true
 
 -- Scrolling
