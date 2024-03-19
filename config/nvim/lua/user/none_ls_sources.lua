@@ -1,6 +1,7 @@
 local null_ls_ok, null_ls = pcall(require, "null-ls")
 local database = require("user.database")
 if not null_ls_ok then
+  vim.notify("Failed to require none-ls")
   return
 end
 
@@ -45,7 +46,7 @@ local default_sources = {
   -- Protobuf Linter
   diagnostics.protolint,
 
-  -- C++, C
+  -- C++, C, C#
   formatting.clang_format,
 
   -- SQL
