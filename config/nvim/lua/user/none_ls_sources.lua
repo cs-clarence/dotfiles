@@ -1,8 +1,8 @@
 local null_ls_ok, null_ls = pcall(require, "null-ls")
 local database = require("user.database")
 if not null_ls_ok then
-  vim.notify("Failed to require none-ls")
-  return
+    vim.notify("Failed to require none-ls")
+    return
 end
 
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
@@ -46,8 +46,8 @@ local default_sources = {
     -- Docker
     diagnostics.hadolint,
 
-  -- C++, C, C#
-  formatting.clang_format,
+    -- C++, C, C#
+    formatting.clang_format,
 
     -- C++, C
     formatting.clang_format.with({
