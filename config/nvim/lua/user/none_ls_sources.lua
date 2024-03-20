@@ -11,54 +11,59 @@ local diagnostics = null_ls.builtins.diagnostics
 local hover = null_ls.builtins.hover
 
 local default_sources = {
-  -- JS, TS, Stylesheets, HTML, etc.
-  formatting.prettierd,
+    -- JS, TS, Stylesheets, HTML, etc.
+    formatting.prettierd,
 
-  -- Python
-  formatting.black,
-  formatting.isort,
+    -- Python
+    formatting.black,
+    formatting.isort,
 
-  -- Lua
-  formatting.stylua,
+    -- Lua
+    formatting.stylua,
 
-  -- Dart
-  formatting.dart_format,
+    -- Dart
+    formatting.dart_format,
 
-  -- Terraform
-  formatting.terraform_fmt,
+    -- Terraform
+    formatting.terraform_fmt,
 
-  -- Go
-  formatting.gofumpt,
-  -- formatting.goimports,
-  formatting.goimports_reviser,
-  -- formatting.golines,
+    -- Go
+    formatting.gofumpt,
+    -- formatting.goimports,
+    formatting.goimports_reviser,
+    -- formatting.golines,
 
-  -- PHP
-  formatting.phpcbf,
-  formatting.phpcsfixer,
-  -- diagnostics.phpstan,
-  -- diagnostics.phpcs,
-  -- diagnostics.phpmd,
+    -- PHP
+    formatting.phpcbf,
+    formatting.phpcsfixer,
+    -- diagnostics.phpstan,
+    -- diagnostics.phpcs,
+    -- diagnostics.phpmd,
 
-  -- Docker
-  diagnostics.hadolint,
+    -- CSharp
+    formatting.csharpier,
 
-  -- Protobuf Linter
-  diagnostics.protolint,
+    -- Docker
+    diagnostics.hadolint,
 
   -- C++, C, C#
   formatting.clang_format,
 
-  -- SQL
-  formatting.sql_formatter.with({
-    extra_args = { "--language", database.config.driver },
-  }),
+    -- C++, C
+    formatting.clang_format.with({
+        filetypes = { "cpp", "c", "h", "tpp", "t", "hpp", "proto", "cuda" },
+    }),
 
-  -- Shell
-  formatting.shfmt,
+    -- SQL
+    formatting.sql_formatter.with({
+        extra_args = { "--language", database.config.driver },
+    }),
 
-  -- Dictionary
-  hover.dictionary,
+    -- Shell
+    formatting.shfmt,
+
+    -- Dictionary
+    hover.dictionary,
 }
 
 local M = {}
@@ -66,13 +71,13 @@ local M = {}
 M.sources = default_sources
 
 function M.add_sources(sources)
-  for _, v in pairs(sources) do
-    table.insert(M.sources, v)
-  end
+    for _, v in pairs(sources) do
+        table.insert(M.sources, v)
+    end
 end
 
 function M.replace_sources(sources)
-  M.sources = sources
+    M.sources = sources
 end
 
 return M
