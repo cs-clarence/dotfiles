@@ -46,9 +46,6 @@ local default_sources = {
     -- Docker
     diagnostics.hadolint,
 
-    -- C++, C, C#
-    formatting.clang_format,
-
     -- C++, C
     formatting.clang_format.with({
         filetypes = { "cpp", "c", "h", "tpp", "t", "hpp", "proto", "cuda" },
