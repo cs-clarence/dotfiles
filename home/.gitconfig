@@ -6,24 +6,24 @@
 	editor = vi
 
 [diff]
-        tool = kdiff3
-[difftool "kdiff3"]
-        path = /usr/bin/kdiff3
+        tool = meld
+[difftool "meld"]
+        path = /usr/bin/meld
+        cmd = meld \"$LOCAL\" \"$REMOTE\"
 [difftool]
         prompt = false
         keepBackup = false
         trustExitCode = false
 
 [merge]
-	tool = kdiff3
+	tool = meld
 	ff = false
 [mergetool]
         prompt = false
         keepBackup = false
         keepTemporaries = false
-[mergetool "kdiff3"]
-        path = usr/bin/kdiff3
+[mergetool "meld"]
+        path = usr/bin/meld
+	    cmd = meld \"$LOCAL\" \"$BASE\" \"$REMOTE\" -o \"$MERGED\"
 [init]
 	defaultBranch = main
-[mergetool "kidff3"]
-	cmd = kdiff3 \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
