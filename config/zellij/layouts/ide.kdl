@@ -1,37 +1,39 @@
 layout {
     cwd "."
 
-    pane_template name="borderless_pane" {
+    pane_template name="base_pane" {
         borderless true
     }
 
     default_tab_template split_direction="horizontal" {
-        borderless_pane size=1 {
+        base_pane size=1 {
             plugin location="zellij:tab-bar"
         }
 
         children
 
-        borderless_pane size=1 {
+        base_pane size=1 {
             plugin location="zellij:status-bar"
         }
     }
 
     tab name="Editor" focus=true {
         pane split_direction="vertical" {
-            borderless_pane {
+            base_pane {
                 name "Editor"
                 focus true
-                edit "."
                 size "100%"
+                command "nvim"
+                args "."
+                close_on_exit false
             }
         }
     }
 
     tab name="Terminal" {
         pane split_direction="vertical" {
-            borderless_pane name="Commands"
-            borderless_pane name="Runner"
+            base_pane name="Commands"
+            base_pane name="Runner"
         }
     }
 }
