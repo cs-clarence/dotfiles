@@ -1,43 +1,37 @@
 layout {
-  name "IDE"
-  split_direction "horizontal"
+    cwd "."
 
-  pane {
-    split_direction "vertical"
-
-    pane {
-      name "Editor"
-      focus true
-      edit "."
-      size "75%"
-      borderless true
+    pane_template name="borderless_pane" {
+        borderless true
     }
-    
-    pane {
-      name "Terminal" 
-      stacked true
 
-      pane {
-        name "Runner" 
-        cwd "."
-      }
-      
-      pane {
-        name "Test" 
-        cwd "."
-      }
+    default_tab_template split_direction="horizontal" {
+        borderless_pane size=1 {
+            plugin location="zellij:tab-bar"
+        }
 
-      pane {
-        expanded true
-        name "Commands" 
-        cwd "."
-      }
+        children
+
+        borderless_pane size=1 {
+            plugin location="zellij:status-bar"
+        }
     }
-  }
 
-  pane {
-    plugin location="zellij:status-bar"
-    borderless true
-    size 2
-  }
+    tab name="Editor" focus=true {
+        pane split_direction="vertical" {
+            borderless_pane {
+                name "Editor"
+                focus true
+                edit "."
+                size "100%"
+            }
+        }
+    }
+
+    tab name="Terminal" {
+        pane split_direction="vertical" {
+            borderless_pane name="Commands"
+            borderless_pane name="Runner"
+        }
+    }
 }

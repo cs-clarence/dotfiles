@@ -14,7 +14,7 @@ on_force_close "quit"
 //    - true
 //    - false (Default)
 //
-simplified_ui false
+simplified_ui true
 
 // Choose the path to the default shell that zellij will use for opening new panes
 // Default: $SHELL
@@ -26,7 +26,7 @@ default_shell "zsh"
 //   - true (default)
 //   - false
 //
-pane_frames true
+pane_frames false
 
 // Toggle between having Zellij lay out panes according to a predefined set of layouts whenever possible
 // Options:
@@ -47,7 +47,7 @@ theme "dracula"
 // The name of the default layout to load on startup
 // Default: "default"
 //
-default_layout "default"
+default_layout "compact"
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal
@@ -104,9 +104,13 @@ scrollback_editor "/usr/bin/nvim"
 // should the session be mirrored (true)
 // or should each user have their own cursor (false)
 // Default: false
-//
 mirror_session false
 
+// Serialize the session to the cache (to be used be session resurrection)
+session_serialization true
+pane_viewport_serialization true
+
+styled_underlines true
 
 ui {
   pane_frames {
@@ -141,9 +145,25 @@ plugins {
 //
 // If you'd like to override the default keybindings completely, be sure to change "keybinds" to "keybinds clear-defaults=true"
 keybinds {
+    /* 
+        Different modes include:
+        normal
+        locked
+        resize
+        pane
+        move
+        tab
+        scroll
+        search
+        entersearch
+        renametab
+        renamepane
+        session
+        tmux
+    */
     normal {
         // uncomment this and adjust key if using copy_on_select=false
-        // bind "Alt c" { Copy; }
+        bind "Alt c" { Copy; }
     }
     locked {
         bind "Ctrl g" { SwitchToMode "Normal"; }
@@ -218,7 +238,7 @@ keybinds {
         bind "d" { HalfPageScrollDown; }
         bind "u" { HalfPageScrollUp; }
         // uncomment this and adjust key if using copy_on_select=false
-        // bind "Alt c" { Copy; }
+        bind "Alt c" { Copy; }
     }
     search {
         bind "Ctrl s" { SwitchToMode "Normal"; }
