@@ -119,6 +119,7 @@ ui {
   }
 }
 
+// Add custom env variables to commands by this config and layouts
 env {
 }
 
@@ -131,36 +132,10 @@ env {
 // theme_dir "/path/to/my/theme_dir"
 
 //
-// Plugins
-//
-plugins {
-    tab-bar { path "tab-bar"; }
-    status-bar { path "status-bar"; }
-    strider { path "strider"; }
-    compact-bar { path "compact-bar"; }
-}
-
-//
 // Keybindings
 //
 // If you'd like to override the default keybindings completely, be sure to change "keybinds" to "keybinds clear-defaults=true"
 keybinds {
-    /* 
-        Different modes include:
-        normal
-        locked
-        resize
-        pane
-        move
-        tab
-        scroll
-        search
-        entersearch
-        renametab
-        renamepane
-        session
-        tmux
-    */
     normal {
         // uncomment this and adjust key if using copy_on_select=false
         bind "Alt c" { Copy; }
@@ -196,7 +171,7 @@ keybinds {
         bind "z" { TogglePaneFrames; SwitchToMode "Normal"; }
         bind "w" { ToggleFloatingPanes; SwitchToMode "Normal"; }
         bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "Normal"; }
-        bind "c" { SwitchToMode "RenamePane"; PaneNameInput 0;}
+        bind "c" { SwitchToMode "RenamePane"; PaneNameInput 0; }
     }
     move {
         bind "Ctrl h" { SwitchToMode "Normal"; }
@@ -272,7 +247,7 @@ keybinds {
         bind "Ctrl s" { SwitchToMode "Scroll"; }
         bind "d" { Detach; }
         bind "w" {
-            LaunchOrFocusPlugin "session-manager" {
+            LaunchOrFocusPlugin "zellij:session-manager" {
                 floating true
                 move_to_focused_tab true
             };
