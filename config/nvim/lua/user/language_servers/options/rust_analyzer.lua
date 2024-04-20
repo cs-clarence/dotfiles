@@ -1,34 +1,42 @@
 return {
-  setup = function()
-    vim.g.rust_recommended_style = false
-  end,
-  config = {
-    settings = {
-      ["rust-analyzer"] = {
-        cargo = {
-          autoreload = true,
-          buildScripts = {
-            enable = true,
-          },
+    setup = function()
+        vim.g.rust_recommended_style = false
+    end,
+    config = {
+        settings = {
+            ["rust-analyzer"] = {
+                cargo = {
+                    allFeatures = true,
+                    autoreload = true,
+                    buildScripts = {
+                        enable = true,
+                    },
+                },
+                diagnostics = {
+                    enable = true,
+                    disabled = {
+                        "unresolved-proc-macro",
+                    },
+                },
+                procMacro = {
+                    enable = true,
+                    ignored = {
+                        ["async_trait"] = "async_trait",
+                        ["tonic"] = "async_trait",
+                        ["tonic::codegen"] = "async_trait",
+                        ["axum"] = "async_trait",
+                    },
+                },
+                inlayHints = {
+                    expressionAdjustmentHints = {
+                        enable = "always",
+                    },
+                    lifetimeElisionHints = {
+                        enable = "always",
+                        useParameterNames = true,
+                    },
+                },
+            },
         },
-        procMacro = {
-          ignored = {
-            ["async_trait"] = "async_trait",
-            ["tonic"] = "async_trait",
-            ["tonic::codegen"] = "async_trait",
-            ["axum"] = "async_trait",
-          },
-        },
-        inlayHints = {
-          expressionAdjustmentHints = {
-            enable = "always",
-          },
-          lifetimeElisionHints = {
-            enable = "always",
-            useParameterNames = true,
-          },
-        },
-      },
     },
-  },
 }
