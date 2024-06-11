@@ -154,7 +154,7 @@ local function retrieve_user_formatters(folder_path_lua)
             end
 
             -- TODO: check if table is empty
-            --
+
             for _, ft in ipairs(value.config.filetypes) do
                 formatters_by_ft[ft] = formatter_list
             end
@@ -184,7 +184,6 @@ return {
                 return
             end
 
-            -- TODO: right now this function needs to be global to be callable inside autocmd, find a solution without needing to make it global
             plugin.setup({
                 formatters_by_ft = configs.formatters_by_ft,
                 -- This can also be a function that returns the table.
