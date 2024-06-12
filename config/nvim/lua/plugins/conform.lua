@@ -93,7 +93,7 @@
 local function file_path_to_module_path(path)
     -- Use gsub to replace one or more consecutive slashes with a single dot
     local result = path:gsub("/+", ".")
-    return result:gsub(".lua", "")
+    return result:gsub("%.lua", "", 1)
 end
 
 local function retrieve_user_formatters(folder_path_lua)
@@ -126,7 +126,7 @@ local function retrieve_user_formatters(folder_path_lua)
     local formatters_by_ft = {}
     local formatters = {}
 
-    for _, value in pairs(user_formatter_configs) do
+    for _, value in ipairs(user_formatter_configs) do
         local function throw_error(reason)
             local msg = "Failed to process formatter configuration: "
                 + value.path
@@ -159,8 +159,8 @@ local function retrieve_user_formatters(folder_path_lua)
                 formatters_by_ft[ft] = formatter_list
             end
         end
-        return { formatters_by_ft = formatters_by_ft, formatters = formatters }
     end
+    return { formatters_by_ft = formatters_by_ft, formatters = formatters }
 end
 
 return {
