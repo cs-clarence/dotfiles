@@ -90,39 +90,12 @@
 --   },
 -- })
 --
-local function file_path_to_module_path(path)
-    -- Use gsub to replace one or more consecutive slashes with a single dot
-    local result = path:gsub("/+", ".")
-    return result:gsub("%.lua", "", 1)
-end
+local module = require("util.module")
 
 local function retrieve_user_formatters(folder_path_lua)
-    local lua_path = vim.fn.stdpath("config") .. "/lua/"
     local lua_rel_path = folder_path_lua or "user/formatters"
-    local formatters_path = lua_path .. lua_rel_path
 
-    local is_dir = vim.fn.isdirectory(formatters_path)
-    if is_dir == 0 then
-        error("Invalid directory " .. formatters_path)
-    end
-
-    local files = vim.fn.glob(formatters_path .. "/*.lua", false, true)
-    local user_formatter_configs = {}
-    for _, p in ipairs(files) do
-        local mod_file = p:gsub(lua_path, "")
-        local module = file_path_to_module_path(mod_file)
-        local is_ok, config = pcall(require, module)
-
-        if not is_ok then
-            error("Failed to require " .. module)
-        end
-
-        table.insert(user_formatter_configs, {
-            path = p,
-            config = config,
-        })
-    end
-
+    local user_formatter_configs = module.load_from_path(lua_rel_path)
     local formatters_by_ft = {}
     local formatters = {}
 
@@ -138,7 +111,7 @@ local function retrieve_user_formatters(folder_path_lua)
 
         local formatter_list = {}
 
-        for key, config_or_name in pairs(value.config.formatters) do
+        for key, config_or_name in pairs(value.content.formatters) do
             if type(key) == "string" and type(config_or_name) == "table" then
                 formatters[key] = config_or_name
                 table.insert(formatter_list, key)
@@ -155,7 +128,7 @@ local function retrieve_user_formatters(folder_path_lua)
 
             -- TODO: check if table is empty
 
-            for _, ft in ipairs(value.config.filetypes) do
+            for _, ft in ipairs(value.content.filetypes) do
                 formatters_by_ft[ft] = formatter_list
             end
         end

@@ -105,3 +105,9 @@ fi
 export ZVM_HOME="$HOME/.zvm"
 export PATH="$PATH:$ZVM_HOME/bin"
 export PATH="$PATH:$ZVM_HOME/self"
+
+
+# SeaweedFS
+export SEAWEEDFS_HOME="$HOME/.seaweedfs"
+export PATH="$PATH:$SEAWEEDFS_HOME/bin"
+
