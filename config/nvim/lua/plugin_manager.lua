@@ -1,5 +1,6 @@
 local M = {}
 local initialized = false
+
 function M.init()
     vim.g.mapleader = " "
     vim.g.maplocalleader = " "
@@ -37,6 +38,7 @@ function M.init()
 
     -- Loads the the files in the plugins folder
     lazy.setup("plugins")
+    initialized = true
 end
 
 return M

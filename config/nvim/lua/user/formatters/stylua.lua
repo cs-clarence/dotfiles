@@ -1,4 +1,4 @@
 return {
-    filetypes = {"lua"},
-    formatters = {"stylua"}
+    filetypes = { "lua" },
+    formatters = { "stylua" },
 }
