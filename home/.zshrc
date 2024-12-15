@@ -1,3 +1,5 @@
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/home/rencedm112/.zsh/completions:"* ]]; then export FPATH="/home/rencedm112/.zsh/completions:$FPATH"; fi
 # Start configuration added by Zim install {{{
 #
 # User configuration sourced by interactive shells

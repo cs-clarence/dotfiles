@@ -115,3 +115,11 @@ export PATH="$PATH:$SEAWEEDFS_HOME/bin"
 export ZVM_HOME="$HOME/.zvm"
 export PATH="$PATH:$ZVM_HOME/bin"
 export PATH="$PATH:$ZVM_HOME/self"
+
+if [ -f "$HOME/.deno/env" ]; then
+    . "$HOME/.deno/env"
+fi
+
+if [ -f "$HOME/.local/share/dnvm/env" ]; then
+    . "$HOME/.local/share/dnvm/env"
+fi
