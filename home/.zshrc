@@ -163,12 +163,17 @@ pdm() {
   fi
 }
 
-if [[ -f './.venv/bin/activate' ]]; then
-    if command -v pdm &> /dev/null
-    then
-        echo "PDM shell activated"
-        pdm shell
-    else
-        source ./.venv/bin/activate
+activate_venv() {
+    if [[ -f './.venv/bin/activate' ]]; then
+        if command -v pdm &> /dev/null
+        then
+            echo "PDM shell activated"
+            pdm shell
+        else
+            source ./.venv/bin/activate
+        fi
     fi
-fi
+}
+
+
+chpwd_functions=(${chpwd_functions[@]} "activate_venv")
