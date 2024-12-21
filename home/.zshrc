@@ -150,3 +150,25 @@ complete -o nospace -C /usr/bin/terraform terraform
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+export PATH="$PATH:/home/rencedm112/.modular/bin"
+
+# pdm
+pdm() {
+  local command=$1
+
+  if [[ "$command" == "shell" ]]; then
+      eval $(pdm venv activate)
+  else
+      command pdm $@
+  fi
+}
+
+if [[ -f './.venv/bin/activate' ]]; then
+    if command -v pdm &> /dev/null
+    then
+        echo "PDM shell activated"
+        pdm shell
+    else
+        source ./.venv/bin/activate
+    fi
+fi
