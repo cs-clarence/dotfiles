@@ -163,7 +163,7 @@ pdm() {
   fi
 }
 
-activate_venv() {
+apply_env() {
     if [[ -f './.venv/bin/activate' ]]; then
         if command -v pdm &> /dev/null
         then
@@ -172,8 +172,13 @@ activate_venv() {
         else
             source ./.venv/bin/activate
         fi
+    else
+        if command -v deactivate &> /dev/null
+        then
+            deactivate
+        fi
     fi
 }
 
 
-chpwd_functions=(${chpwd_functions[@]} "activate_venv")
+chpwd_functions=(${chpwd_functions[@]} "apply_env")
