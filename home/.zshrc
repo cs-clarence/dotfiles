@@ -182,3 +182,5 @@ apply_env() {
 
 
 chpwd_functions=(${chpwd_functions[@]} "apply_env")
+
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
