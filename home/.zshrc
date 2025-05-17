@@ -183,4 +183,6 @@ apply_env() {
 
 chpwd_functions=(${chpwd_functions[@]} "apply_env")
 
-[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+if [ -f "$HOME/.local/share/dnvm/env" ]; then
+    . "$HOME/.local/share/dnvm/env"
+fi
