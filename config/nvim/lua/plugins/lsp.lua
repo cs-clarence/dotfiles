@@ -109,31 +109,31 @@ return {
                 ensure_installed = language_servers,
             })
 
-            mason_lsp_config.setup_handlers({
-                -- This is a default handler that will be called for each installed server (also for new servers that are installed during a session)
-                function(server_name)
-                    local local_opts = vim.tbl_deep_extend("force", {}, opts)
-                    local has_custom_opts, custom_opts = pcall(
-                        require,
-                        "user.language_servers.options." .. server_name
-                    )
-                    if has_custom_opts then
-                        if type(custom_opts.config) == "table" then
-                            local_opts = vim.tbl_deep_extend(
-                                "force",
-                                opts,
-                                custom_opts.config
-                            )
-                        end
-
-                        if type(custom_opts.setup) == "function" then
-                            custom_opts.setup()
-                        end
-                    end
-
-                    lc[server_name].setup(local_opts)
-                end,
-            })
+            -- mason_lsp_config.setup_handlers({
+            --     -- This is a default handler that will be called for each installed server (also for new servers that are installed during a session)
+            --     function(server_name)
+            --         local local_opts = vim.tbl_deep_extend("force", {}, opts)
+            --         local has_custom_opts, custom_opts = pcall(
+            --             require,
+            --             "user.language_servers.options." .. server_name
+            --         )
+            --         if has_custom_opts then
+            --             if type(custom_opts.config) == "table" then
+            --                 local_opts = vim.tbl_deep_extend(
+            --                     "force",
+            --                     opts,
+            --                     custom_opts.config
+            --                 )
+            --             end
+            --
+            --             if type(custom_opts.setup) == "function" then
+            --                 custom_opts.setup()
+            --             end
+            --         end
+            --
+            --         lc[server_name].setup(local_opts)
+            --     end,
+            -- })
         end,
     },
 }
