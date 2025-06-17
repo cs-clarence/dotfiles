@@ -1,31 +1,31 @@
 return {
-  {
-    "lvimuser/lsp-inlayhints.nvim",
-    lazy = false,
-    cond = function()
-      return not vim.g.vscode
-    end,
-    config = function()
-      local ok, plugin = pcall(require, "lsp-inlayhints")
-      if not ok then
-        vim.notify("Failed to require lsp-inlayhints")
-        return
-      end
-
-      plugin.setup()
-      vim.api.nvim_create_augroup("LspAttach_inlayhints", {})
-      vim.api.nvim_create_autocmd("LspAttach", {
-        group = "LspAttach_inlayhints",
-        callback = function(args)
-          if not (args.data and args.data.client_id) then
-            return
-          end
-
-          local bufnr = args.buf
-          local client = vim.lsp.get_client_by_id(args.data.client_id)
-          require("lsp-inlayhints").on_attach(client, bufnr)
+    {
+        "lvimuser/lsp-inlayhints.nvim",
+        lazy = false,
+        cond = function()
+            return not vim.g.vscode and false
         end,
-      })
-    end,
-  },
+        config = function()
+            local ok, plugin = pcall(require, "lsp-inlayhints")
+            if not ok then
+                vim.notify("Failed to require lsp-inlayhints")
+                return
+            end
+
+            plugin.setup()
+            vim.api.nvim_create_augroup("LspAttach_inlayhints", {})
+            vim.api.nvim_create_autocmd("LspAttach", {
+                group = "LspAttach_inlayhints",
+                callback = function(args)
+                    if not (args.data and args.data.client_id) then
+                        return
+                    end
+
+                    local bufnr = args.buf
+                    local client = vim.lsp.get_client_by_id(args.data.client_id)
+                    require("lsp-inlayhints").on_attach(client, bufnr)
+                end,
+            })
+        end,
+    },
 }
