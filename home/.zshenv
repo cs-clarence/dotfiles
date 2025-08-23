@@ -124,7 +124,8 @@ if [ -f "$HOME/.local/share/dnvm/env" ]; then
     . "$HOME/.local/share/dnvm/env"
 fi
 
-if [ -f "$HOME/.omni/bin" ]; then
-    PATH="HOME/.omni/bin:PATH"
+export OMNI_HOME="$HOME/.omni"
+if [ -f "$OMNI_HOME/bin/omni" ]; then
+    export PATH="$OMNI_HOME/bin:$PATH"
 fi
 
