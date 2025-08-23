@@ -123,3 +123,8 @@ fi
 if [ -f "$HOME/.local/share/dnvm/env" ]; then
     . "$HOME/.local/share/dnvm/env"
 fi
+
+if [ -f "$HOME/.omni/bin" ]; then
+    PATH="HOME/.omni/bin:PATH"
+fi
+
