@@ -14,7 +14,7 @@
   "auto_update": true,
 
   // Visuals Guides
-  "auto_signature_help": true,
+  "auto_signature_help": false,
   "wrap_guides": [80],
   "cursor_blink": false,
   "cursor_shape": "bar",
