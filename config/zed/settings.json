@@ -8,21 +8,122 @@
 // from the command palette or from `Zed` application menu.
 {
   "vim_mode": true,
-  "ui_font_size": 16,
-  "buffer_font_size": 16,
-  "auto_indent": true,
-  "auto_indent_on_paste": true,
+  "auto_update": true,
+  "auto_signature_help": true,
+  "base_keymap": "VSCode",
+
+  // Visuals
+  "cursor_blink": false,
+  "cursor_shape": "bar",
+  "hide_mouse": "on_typing_and_movement",
   "theme": {
     "mode": "system",
     "light": "One Light",
     "dark": "GitHub Dark Default"
   },
-  "languages": {
-    "JavaScript": {
-      "tab_size": 4
+  "current_line_highlight": "line",
+
+  // Minimap
+  "minimap": {
+    "show": "auto"
+  },
+
+  // Scrollbar
+  "scrollbar": {
+    "show": "auto"
+  },
+
+  // Tabs
+  "preview_tabs": {
+    "enabled": true,
+    "enable_preview_from_file_finder": true,
+    "enable_preview_from_code_navigation": true
+  },
+  "tab_bar": {
+    "show": true
+  },
+  "tabs": {
+    "show_diagnostics": "all",
+    "close_position": "right",
+    "git_status": true,
+    "show_close_button": "hover",
+    "file_icons": true
+  },
+
+  // Toolbar
+  "toolbar": {},
+
+  // Status Bar
+  "status_bar": {},
+
+  // LSP
+  "lsp": {},
+  "lsp_highlight_debounce": 75,
+  "global_lsp_settings": {
+    "button": true
+  },
+
+  // Panes
+  "active_pane_modifiers": {
+    "border_size": 1,
+    "inactive_opacity": 0.25
+  },
+
+  // Features
+  "features": {
+    "edit_prediction_provider": "supermaven"
+  },
+
+  // Text Editing
+  "allow_rewrap": "in_comments",
+  "auto_indent": true,
+  "auto_indent_on_paste": true,
+  "format_on_save": "on",
+
+  // Diagnostics
+  "diagnostics": {
+    "button": true,
+    "include_warnings": true,
+    "lsp_pull_diagnostics": {
+      "enabled": true,
+      "debounce_ms": 50
     },
-    "TypeScript": {
-      "tab_size": 4
+    "inline": {
+      "enabled": false,
+      "update_debounce_ms": 150,
+      "padding": 4,
+      "min_column": 0,
+      "max_severity": null
     }
-  }
+  },
+
+  // Project Panel
+  "project_panel": {},
+
+  // Git
+  "git": {
+    "git_gutter": "tracked_files",
+    "inline_blame": {
+      "enabled": true,
+      "padding": 7,
+      "delay_ms": 0,
+      "min_column": 0,
+      "show_commit_summary": true
+    },
+    "gutter_debounce": null,
+    "hunk_style": "staged_hollow"
+  },
+
+  // Indent Guides
+  "indent_guides": {
+    "enabled": true
+  },
+
+  // Fonts
+  "ui_font_size": 16,
+  "buffer_font_size": 16,
+  "buffer_font_family": "JetBrains Mono",
+  "buffer_font_fallbacks": [".ZedMono"],
+  "ui_font_family": "JetBrains Mono",
+  "ui_font_fallbacks": [".ZedMono"]
 }

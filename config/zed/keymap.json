@@ -1,0 +1,8 @@
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-alt-p": "pane::RevealInProjectPanel"
+    }
+  }
+]
