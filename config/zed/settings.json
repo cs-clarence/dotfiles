@@ -7,21 +7,45 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  // Key Maps
   "vim_mode": true,
-  "auto_update": true,
-  "auto_signature_help": true,
   "base_keymap": "VSCode",
 
-  // Visuals
+  "auto_update": true,
+
+  // Visuals Guides
+  "auto_signature_help": true,
+  "wrap_guides": [80],
   "cursor_blink": false,
   "cursor_shape": "bar",
   "hide_mouse": "on_typing_and_movement",
+  "current_line_highlight": "line",
+  "show_whitespaces": "selection",
+  "show_wrap_guides": true,
+
+  // Theming
   "theme": {
     "mode": "system",
     "light": "One Light",
     "dark": "GitHub Dark Default"
   },
-  "current_line_highlight": "line",
+
+  // Title Bar
+  "title_bar": {
+    "show_branch_icon": true,
+    "show_user_picture": true,
+    "show_project_items": true,
+    "show_menus": false
+  },
+
+  // Git Panel
+  "git_panel": {},
+
+  // Outline Panel
+  "outline_panel": {},
+
+  // Calls
+  "calls": {},
 
   // Minimap
   "minimap": {
@@ -63,22 +87,8 @@
     "button": true
   },
 
-  // Panes
-  "active_pane_modifiers": {
-    "border_size": 1,
-    "inactive_opacity": 0.25
-  },
-
-  // Features
-  "features": {
-    "edit_prediction_provider": "supermaven"
-  },
-
-  // Text Editing
-  "allow_rewrap": "in_comments",
-  "auto_indent": true,
-  "auto_indent_on_paste": true,
-  "format_on_save": "on",
+  // Completions
+  "completions": {},
 
   // Diagnostics
   "diagnostics": {
@@ -97,8 +107,36 @@
     }
   },
 
+  // Panes
+  "pane_split_direction_horizontal": "down",
+  "pane_split_direction_vertical": "right",
+  "active_pane_modifiers": {
+    "border_size": 1,
+    "inactive_opacity": 0.25
+  },
+
+  // Features
+  "features": {
+    "edit_prediction_provider": "supermaven"
+  },
+
+  // Text Editing
+  "allow_rewrap": "in_comments",
+  "auto_indent": true,
+  "preferred_line_length": 80,
+  "format_on_save": "on",
+  "remove_trailing_whitespace_on_save": true,
+  "use_auto_surround": true,
+
   // Project Panel
   "project_panel": {},
+
+  // File Finder
+  "file_finder": {
+    "file_icons": true,
+    "git_status": true,
+    "modal_max_width": "medium"
+  },
 
   // Git
   "git": {
@@ -112,6 +150,15 @@
     },
     "gutter_debounce": null,
     "hunk_style": "staged_hollow"
+  },
+
+  // Terminal
+  "terminal": {},
+
+  // Telemetry
+  "telemetry": {
+    "diagnostics": true,
+    "metrics": true
   },
 
   // Indent Guides
