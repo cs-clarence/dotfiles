@@ -134,7 +134,8 @@
 	"remove_trailing_whitespace_on_save": true,
 	"use_auto_surround": true,
 	"code_actions_on_format": {
-		"source.organizeImports": true
+		"source.organizeImports": true,
+		"source.removeUnusedImports": true
 	},
 
 	// Project Panel
