@@ -8,6 +8,12 @@
 // from the command palette or from `Zed` application menu.
 {
 	// Key Maps
+	"agent": {
+		"inline_assistant_model": {
+			"provider": "copilot_chat",
+			"model": "o3-mini"
+		}
+	},
 	"vim_mode": true,
 	"base_keymap": "VSCode",
 
@@ -127,6 +133,9 @@
 	"format_on_save": "on",
 	"remove_trailing_whitespace_on_save": true,
 	"use_auto_surround": true,
+	"code_actions_on_format": {
+		"source.organizeImports": true
+	},
 
 	// Project Panel
 	"project_panel": {},
