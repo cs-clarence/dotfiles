@@ -11,7 +11,7 @@
 	"agent": {
 		"inline_assistant_model": {
 			"provider": "copilot_chat",
-			"model": "o3-mini"
+			"model": "gpt-5-mini"
 		}
 	},
 	"vim_mode": true,
@@ -66,8 +66,7 @@
 	// Tabs
 	"preview_tabs": {
 		"enabled": true,
-		"enable_preview_from_file_finder": true,
-		"enable_preview_from_code_navigation": true
+		"enable_preview_from_file_finder": true
 	},
 	"tab_bar": {
 		"show": true
@@ -87,7 +86,23 @@
 	"status_bar": {},
 
 	// LSP
-	"lsp": {},
+	"lsp": {
+		"vtsls": {
+			"settings": {
+				"typescript": {
+					"updateImportsOnFileMove": {
+						"enabled": "always"
+					}
+				},
+				"javascript": {
+					"updateImportsOnFileMove": {
+						"enabled": "always"
+					}
+				}
+			},
+			"enable_lsp_tasks": true
+		}
+	},
 	"lsp_highlight_debounce": 75,
 	"global_lsp_settings": {
 		"button": true
@@ -133,8 +148,9 @@
 	"format_on_save": "on",
 	"remove_trailing_whitespace_on_save": true,
 	"use_auto_surround": true,
+	"use_on_type_format": false,
 	"code_actions_on_format": {
-		"source.organizeImports": true,
+		// "source.organizeImports": true,
 		"source.removeUnusedImports": true
 	},
 
