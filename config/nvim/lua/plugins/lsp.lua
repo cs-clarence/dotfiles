@@ -36,12 +36,6 @@ return {
                 plugin.setup()
             end
 
-            local lsp_config_ok, lc = pcall(require, "lspconfig")
-            if not lsp_config_ok then
-                vim.notify("Failed to require lspconfig")
-                return
-            end
-
             local lsp_flags = {
                 -- This is the default in Nvim 0.7+
                 debounce_text_changes = 150,
@@ -99,8 +93,9 @@ return {
                 })
 
             do
+                vim.lsp.config("dartls", opts)
+                vim.lsp.enable("dartls")
                 -- Setup LSPs not supported by mason
-                lc.dartls.setup(opts)
             end
 
             mason.setup()
