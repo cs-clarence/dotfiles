@@ -9,15 +9,15 @@
 {
 	// Key Maps
 	"cli_default_open_behavior": "new_window",
-	"collaboration_panel": {
-		"dock": "left"
-	},
-	"edit_predictions": {
-		"provider": "copilot"
-	},
-	"agent": {
+ "collaboration_panel": {
+  "dock": "left"
+ },
+ "edit_predictions": {
+  "provider": "copilot"
+ },
+ "agent": {
 		"dock": "right",
-		"inline_assistant_model": {
+  "inline_assistant_model": {
 			"provider": "copilot_chat",
 			"model": "gpt-5-mini"
 		}
@@ -46,7 +46,7 @@
 
 	// Title Bar
 	"title_bar": {
-		"show_branch_status_icon": true,
+		"show_branch_icon": true,
 		"show_user_picture": true,
 		"show_project_items": true,
 		"show_menus": false
@@ -54,13 +54,13 @@
 
 	// Git Panel
 	"git_panel": {
-		"dock": "left"
-	},
+  "dock": "left"
+ },
 
 	// Outline Panel
 	"outline_panel": {
-		"dock": "left"
-	},
+  "dock": "left"
+ },
 
 	// Calls
 	"calls": {},
@@ -151,7 +151,7 @@
 	// Features
 	// Text Editing
 	"allow_rewrap": "in_comments",
-	"auto_indent": "syntax_aware",
+	"auto_indent": true,
 	"preferred_line_length": 80,
 	"format_on_save": "on",
 	"remove_trailing_whitespace_on_save": true,
@@ -164,13 +164,13 @@
 
 	// Project Panel
 	"project_panel": {
-		"dock": "left"
-	},
+  "dock": "left"
+ },
 
 	// File Finder
 	"file_finder": {
 		"file_icons": true,
-		"include_channels": true,
+		"git_status": true,
 		"modal_max_width": "medium"
 	},
 
@@ -237,6 +237,7 @@
 		"TSX": { "formatter": { "language_server": { "name": "biome" } } },
 		"JSON": { "formatter": { "language_server": { "name": "biome" } } },
 		"JSONC": { "formatter": { "language_server": { "name": "biome" } } },
-		"CSS": { "formatter": { "language_server": { "name": "biome" } } }
+		"CSS": { "formatter": { "language_server": { "name": "biome" } } },
+		"GraphQL": { "formatter": { "language_server": { "name": "biome" } } }
 	}
 }
