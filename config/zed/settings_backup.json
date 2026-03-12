@@ -25,7 +25,7 @@
 	"vim_mode": true,
 	"base_keymap": "VSCode",
 
-	"auto_update": false,
+	"auto_update": true,
 
 	// Visuals Guides
 	"auto_signature_help": false,
