@@ -182,7 +182,3 @@ apply_env() {
 
 
 chpwd_functions=(${chpwd_functions[@]} "apply_env")
-
-if [ -f "$HOME/.local/share/dnvm/env" ]; then
-    . "$HOME/.local/share/dnvm/env"
-fi

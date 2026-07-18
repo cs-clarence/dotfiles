@@ -1,6 +1,6 @@
 # User specific environment
 if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
-	PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 fi
 export PATH
 
@@ -10,11 +10,11 @@ export PATH="$ANDROID_HOME/platform-tools:$ANDROID_HOME/cmdline-tools:$ANDROID_H
 
 # Setting chrome dev tool for flutter
 if [ -x "$(command -v chrome-browser)" ]; then
-	ce="$(which chrome-browser)"
-	export CHROME_EXECUTABLE=$ce
+    ce="$(which chrome-browser)"
+    export CHROME_EXECUTABLE=$ce
 elif [ -x "$(command -v chromium-browser)" ]; then
-	ce="$(which chromium-browser)"
-	export CHROME_EXECUTABLE=$ce
+    ce="$(which chromium-browser)"
+    export CHROME_EXECUTABLE=$ce
 fi
 
 unset rc
@@ -35,7 +35,7 @@ export PATH="$MITMPROXY_HOME/bin:$PATH"
 # MITM PROXY END
 
 if [ -f "$HOME/.cargo/env" ]; then
-  . "$HOME/.cargo/env"
+    . "$HOME/.cargo/env"
 fi
 
 # GVM
@@ -45,16 +45,11 @@ fi
 export SURREALDB_HOME="$HOME/.surrealdb"
 export PATH="$SURREALDB_HOME:$PATH"
 
-# fnm
-export PATH="$HOME/.local/share/fnm:$PATH"
-eval "$(fnm env)"
-# fnm
-
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
 case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
+*":$PNPM_HOME:"*) ;;
+*) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
 
@@ -83,7 +78,7 @@ export PATH="$HOME/.moon/bin:$PATH"
 
 # ROVER START
 if [ -f "$HOME/.rover/env" ]; then
-  . "$HOME/.rover/env"
+    . "$HOME/.rover/env"
 fi
 # ROVER END
 
@@ -96,7 +91,7 @@ export PATH="$HOME/.zig:$PATH"
 
 # ESP-rs and IDF
 if [ -f "$HOME/export-esp.sh" ]; then
-  . "$HOME/export-esp.sh"
+    . "$HOME/export-esp.sh"
 fi
 
 # export IDF_PATH="$HOME/esp/esp-idf"
@@ -106,11 +101,9 @@ export ZVM_HOME="$HOME/.zvm"
 export PATH="$PATH:$ZVM_HOME/bin"
 export PATH="$PATH:$ZVM_HOME/self"
 
-
 # SeaweedFS
 export SEAWEEDFS_HOME="$HOME/.seaweedfs"
 export PATH="$PATH:$SEAWEEDFS_HOME/bin"
-
 
 export ZVM_HOME="$HOME/.zvm"
 export PATH="$PATH:$ZVM_HOME/bin"
@@ -129,3 +122,15 @@ if [ -f "$OMNI_HOME/env" ]; then
     . "$HOME/.omni/env"
 fi
 
+if [ -f "$HOME/.local/share/dnvm/env" ]; then
+    . "$HOME/.local/share/dnvm/env"
+fi
+
+# nub
+export NUB_HOME="$HOME/.nub"
+if [ -d "$NUB_HOME" ]; then
+    export PATH="$NUB_HOME/bin:$PATH"
+fi
+if [ -f "$NUB_HOME/env" ]; then
+    . "$NUB_HOME/env"
+fi
