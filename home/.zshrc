@@ -140,10 +140,6 @@ unset key
 # bun completions
 [ -s "/home/rencedm112/.bun/_bun" ] && source "/home/rencedm112/.bun/_bun"
 
-# fnm
-export PATH="/home/rencedm112/.local/share/fnm:$PATH"
-eval "`fnm env`"
-
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform
 

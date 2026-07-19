@@ -129,7 +129,12 @@ fi
 # nub
 export NUB_HOME="$HOME/.nub"
 if [ -d "$NUB_HOME" ]; then
-    export PATH="$NUB_HOME/bin:$PATH"
+    if [ -d "$NUB_HOME/bin" ]; then
+        export PATH="$NUB_HOME/bin:$PATH"
+    fi
+    if [ -d "$NUB_HOME/node-shim" ]; then
+        export PATH="$NUB_HOME/node-shim:$PATH"
+    fi
 fi
 if [ -f "$NUB_HOME/env" ]; then
     . "$NUB_HOME/env"
