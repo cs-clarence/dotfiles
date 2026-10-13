@@ -139,3 +139,11 @@ fi
 if [ -f "$NUB_HOME/env" ]; then
     . "$NUB_HOME/env"
 fi
+
+# opencode
+export OPENCODE_HOME="$HOME/.opencode"
+if [ -d "$OPENCODE_HOME" ]; then
+    if [ -d "$OPENCODE_HOME/bin" ]; then
+        export PATH=$OPENCODE_HOME/bin:$PATH
+    fi
+fi

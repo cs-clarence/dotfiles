@@ -7,21 +7,63 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "cli_default_open_behavior": "new_window",
+  "collaboration_panel": {
+      "dock": "left"
+  },
+  "edit_predictions": {
+      "open_ai_compatible_api": {
+          "api_url": "https://bedrock-mantle.us-east-1.api.aws/v1",
+          "model": "anthropic.claude-haiku-4-5-20251001-v1:0"
+      },
+      "provider": "zed"
+  },
+  "agent": {
+      "sandbox_permissions": {
+          "allow_unsandboxed": true,
+          "network_hosts": [
+              "nodejs.org",
+              "docs.rs",
+              "nubjs.com",
+              "github.com",
+              "api.github.com",
+              "raw.githubusercontent.com",
+              "crates.io",
+              "bun.sh",
+              "docs.deno.com",
+              "docs.cilium.io",
+              "docs.kernel.org",
+              "static.crates.io",
+              "index.crates.io"
+          ]
+      },
+      "tool_permissions": {
+          "tools": {
+              "fetch": {
+                  "default": "allow"
+              },
+              "create_directory": {
+                  "default": "allow"
+              },
+              "terminal": {
+                  "default": "allow"
+              }
+          }
+      },
+      "default_model": {
+          "provider": "copilot_chat",
+          "model": "claude-opus-5.5",
+          "enable_thinking": true,
+          "effort": "high"
+      },
+      "dock": "right",
+      "inline_assistant_model": {
+          "provider": "copilot_chat",
+          "model": "gpt-5-mini"
+      }
+  },
 	// Key Maps
-	"cli_default_open_behavior": "new_window",
-	"collaboration_panel": {
-		"dock": "left"
-	},
-	"edit_predictions": {
-		"provider": "copilot"
-	},
-	"agent": {
-		"dock": "right",
-		"inline_assistant_model": {
-			"provider": "copilot_chat",
-			"model": "gpt-5-mini"
-		}
-	},
+	"proxy": "",
 	"vim_mode": true,
 	"base_keymap": "VSCode",
 
@@ -32,7 +74,7 @@
 	"wrap_guides": [80],
 	"cursor_blink": false,
 	"cursor_shape": "bar",
-	"hide_mouse": "on_typing_and_movement",
+	"hide_mouse": "on_typing_and_action",
 	"current_line_highlight": "line",
 	"show_whitespaces": "selection",
 	"show_wrap_guides": true,
